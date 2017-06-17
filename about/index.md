@@ -1,37 +1,34 @@
 ---
 layout: page
-title: About the Theme
-tags: [about, Jekyll, theme, moon]
-date: 2016-03-21
+title: About me
+tags: [about, p0lish]
+date: 2017-06-17
 comments: false
 ---
-    
-<center><a href="http://taylantatli.github.io/Moon"><b>Moon</b></a> is a minimal, one column jekyll theme.</center>
 
-## Features
-* Minimal, you can focus on your content
-* Responsive
-* Disqus integration
-* Syntax highlighting
-* Optional post image
-* Social icons
-* Page for sharing projects
-* Optional background image
-* Simple navigation menu
-* MathJax support
+## Personal info
 
-## Preview
+Hi, my name is Janos, and I was born in 1987.
+Writing programs is my hobby and my passion,
+since secondary school. I have been  using 
+GNU/Linux for more than ten years.
 
-{% capture images %}
-    https://cloud.githubusercontent.com/assets/754514/14509720/61c61058-01d6-11e6-93ab-0918515ecd56.png
-    https://cloud.githubusercontent.com/assets/754514/14509716/61ac6c8e-01d6-11e6-879f-8308883de790.png
-{% endcapture %}
-{% include gallery images=images caption="Screenshots of Moon Theme" cols=2 %}
 
-See a [live version of Moon](http://taylantatli.github.io/Moon) hosted on GitHub.
+![me](/about/image/me.jpg)
 
-## Getting Started
+## Likes
 
-To learn how to install and use this theme check out the [Setup Guide](http://taylantatli.me/Moon/moon-theme/) for more information.
-      
-[Install Moon](https://github.com/TaylanTatli/Moon){: .btn}
+I like horror movies and dark humour.
+My favourite music genres are synthwave,
+rock, metal and classical music.
+I like DIY things and tiny-homes 
+
+## Skills
+
+Python, Go, 
+Javascript, HTML, CSS,
+IT Security, Networking.
+Cooking, DIY
+
+
+
