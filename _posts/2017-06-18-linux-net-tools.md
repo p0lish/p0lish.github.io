@@ -19,6 +19,6 @@ There are the alternatives for: **arp**, **ifconfig**, **iptunnel**, **iwconfig*
      route > ip r   
      
 
-For more info pleade visit this article: 
+For more info please visit this article: 
 
 [Replacing ifconfing with ip](https://www.linux.com/learn/replacing-ifconfig-ip)
