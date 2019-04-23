@@ -1,5 +1,13 @@
 ---
 ---
+
+@font-face {
+  font-family: "80s";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../css/fontawesome/webfonts/editundo.ttf") format("truetype");
+}
+
 @mixin font-size($size) {
   font-size: $size;
   font-size: calculateRem($size);
@@ -16,29 +24,22 @@
 //                    Variables
 //********************************************************
 
-// Several accent colors, choose one or create your own!
-$accent-color: #3CA2A2;    // original =)
-//$accent-color: #C38FD6;  // velvet
-//$accent-color: #8FD6B3;  // greenish
-//$accent-color: #35B4DE;  // bluish
-//$accent-color: #D2E354;  // yellowish
-//$accent-color: #52B54B;  // green
-
+$accent-color: rgb(147, 112, 219);
 $font-color: #dddddd;
 $background-color: #292929;
 $post-panel-color: #39393a;
 $footer-background-color: #292c2f;
-$note-color: #87CEFA;
+$note-color: #87cefa;
 $warning-color: #ffff00;
 // use this or pick any from /css/pics/background folder or from transparenttextures.com
-$background-pattern: 'random-grey-variations.png';
+$background-pattern: "triangles.png";
 
 //********************************************************
 //                  Common styles
 //********************************************************
 body {
   color: $font-color;
-  background: $background-color url(pics/background/#{$background-pattern});
+  background: $background-color;
 }
 .card {
   background-color: $post-panel-color;
@@ -51,12 +52,24 @@ body {
   width: 75%;
 }
 
-h1 { font-size: 2em; }
-h2 { font-size: 1.5em; }
-h3 { font-size: 1.17em; }
-h4 { font-size: 1.12em; }
-h5 { font-size: .83em; }
-h6 { font-size: .75em; }
+h1 {
+  font-size: 2em;
+}
+h2 {
+  font-size: 1.5em;
+}
+h3 {
+  font-size: 1.17em;
+}
+h4 {
+  font-size: 1.12em;
+}
+h5 {
+  font-size: 0.83em;
+}
+h6 {
+  font-size: 0.75em;
+}
 
 img {
   display: inline-block;
@@ -79,6 +92,9 @@ blockquote {
 
 a {
   color: $accent-color;
+  &:hover {
+    color: $accent-color;
+  }
 }
 
 //********************************************************
@@ -102,11 +118,10 @@ ul.social-media {
   }
 }
 
-
 //********************************************************
 //                    Share
 //********************************************************
-.share-bar{
+.share-bar {
   text-align: right;
 }
 
@@ -121,39 +136,63 @@ ul.share-buttons {
     .fa-linkedin-in,
     .fa-envelope,
     .fa-pinterest-p {
-      color: #ffffff
+      color: #ffffff;
     }
     a {
       text-decoration: none;
     }
-    -webkit-transition: -webkit-transform .4s;
-    -moz-transition: -moz-transform .4s;
-    -ms-transition: -ms-transform .4s;
-    -o-transition: -o-transform .4s;
-    transition: transform .4s;
+    -webkit-transition: -webkit-transform 0.4s;
+    -moz-transition: -moz-transform 0.4s;
+    -ms-transition: -ms-transform 0.4s;
+    -o-transition: -o-transform 0.4s;
+    transition: transform 0.4s;
   }
 
   // Square frame
-  li.share-facebook .fa-square { color: #3B5998;}
-  li.share-twitter .fa-square { color: #55acee;}
-  li.share-google-plus .fa-square { color: #dd4b39;}
-  li.share-linkedin .fa-square { color: #4875B4;}
-  li.share-pinterest .fa-square { color: #BD081C;}
-  li.share-envelope .fa-square { color: #3B5998;}
+  li.share-facebook .fa-square {
+    color: #3b5998;
+  }
+  li.share-twitter .fa-square {
+    color: #55acee;
+  }
+  li.share-google-plus .fa-square {
+    color: #dd4b39;
+  }
+  li.share-linkedin .fa-square {
+    color: #4875b4;
+  }
+  li.share-pinterest .fa-square {
+    color: #bd081c;
+  }
+  li.share-envelope .fa-square {
+    color: #3b5998;
+  }
   // Circle frame
-  li.share-facebook .fa-circle { color: #3B5998;}
-  li.share-twitter .fa-circle { color: #55acee;}
-  li.share-google-plus .fa-circle { color: #dd4b39;}
-  li.share-linkedin .fa-circle { color: #4875B4;}
-  li.share-pinterest .fa-circle { color: #BD081C;}
-  li.share-envelope .fa-circle { color: #3B5998;}
+  li.share-facebook .fa-circle {
+    color: #3b5998;
+  }
+  li.share-twitter .fa-circle {
+    color: #55acee;
+  }
+  li.share-google-plus .fa-circle {
+    color: #dd4b39;
+  }
+  li.share-linkedin .fa-circle {
+    color: #4875b4;
+  }
+  li.share-pinterest .fa-circle {
+    color: #bd081c;
+  }
+  li.share-envelope .fa-circle {
+    color: #3b5998;
+  }
 
   li:hover {
-    -webkit-transform: scale(1.3,1.3);
-    -moz-transform: scale(1.3,1.3);
-    -ms-transform: scale(1.3,1.3);
-    -o-transform: scale(1.3,1.3);
-    transform: scale(1.3,1.3);
+    -webkit-transform: scale(1.3, 1.3);
+    -moz-transform: scale(1.3, 1.3);
+    -ms-transform: scale(1.3, 1.3);
+    -o-transform: scale(1.3, 1.3);
+    transform: scale(1.3, 1.3);
   }
 }
 
@@ -161,14 +200,14 @@ ul.share-buttons {
 //                    Sidebar
 //********************************************************
 .sidebar li {
-  margin-top: .7em;
+  margin-top: 0.7em;
   line-height: 1em;
 }
 ul.sideBarTags {
   list-style: none;
   li:before {
-    content: '\f02b';
-    font-family: 'FontAwesome';
+    content: "\f02b";
+    font-family: "FontAwesome";
     float: left;
     margin-left: -1.5em;
   }
@@ -212,14 +251,14 @@ div.post-meta {
 //********************************************************
 //                    Note / Warning
 //********************************************************
-blockquote{
+blockquote {
   border-left: 2px solid #666;
   padding-left: 20px;
   font-style: italic;
 }
 
 blockquote.note p,
-blockquote.warning p{
+blockquote.warning p {
   height: 48px;
   vertical-align: middle;
   padding: 10px;
@@ -228,7 +267,7 @@ blockquote.warning p{
 
 .note {
   font-style: normal;
-  position:relative;
+  position: relative;
   border: 0;
   padding-left: 30px;
 }
@@ -238,7 +277,7 @@ blockquote.warning p{
   font-size: 2em;
   font-family: FontAwesome;
   left: 0;
-  position:absolute;
+  position: absolute;
   top: 0;
   color: $note-color;
 }
@@ -254,17 +293,23 @@ nav {
   background-color: #222;
   border-color: #080808;
   font-size: 18px;
-  font-family: "Ubuntu", sans-serif;
   padding: 0 10px !important;
-  border-top: 3px #3CA2A2 solid;
+  border-top: 3px #3ca2a2 solid;
   border-bottom: 1px #000000 solid;
-  .navbar-brand, .nav-link {
-   color: #777;
-   @include transition(color 0.31s);
-   transition: all .7s ease;
+  .navbar-brand,
+  .nav-link {
+    color: #777;
+    @include transition(color 0.31s);
+    transition: all 0.7s ease;
+    font-family: "80s";
+    font-size: 2.5rem;
   }
-  .navbar-brand:hover, .nav-link:hover {
+  .navbar-brand:hover,
+  .nav-link:hover {
     color: white !important;
+    text-shadow: 0 0 0 #fff, 0 0 0 #fff, 0 0 15px $accent-color,
+      0 0 15px $accent-color, 0 0 15px $accent-color, 0 0 15px $accent-color,
+      0 0 15px $accent-color;
   }
   .navbar-brand {
     font-size: 30px;
@@ -307,18 +352,18 @@ nav.shrink {
   border-top-right-radius: 5px;
 
   tbody {
-    box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.1), 0 -1px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.3),
+      0 1px 0 rgba(255, 255, 255, 0.1), 0 -1px 0 rgba(0, 0, 0, 0.5);
   }
 
   th {
     text-transform: uppercase;
     text-align: center;
-    padding: .5em .75em;
+    padding: 0.5em 0.75em;
   }
   td {
-    padding: .5em;
+    padding: 0.5em;
   }
-
 }
 
 table.wide {
@@ -353,23 +398,23 @@ table.inner-borders {
   position: absolute;
 }
 
-.box h3{
-	text-align:center;
-	position:relative;
-	top:80px;
+.box h3 {
+  text-align: center;
+  position: relative;
+  top: 80px;
 }
 .box {
-	width:70%;
-	height:200px;
-	background:#FFF;
-	margin:40px auto;
+  width: 70%;
+  height: 200px;
+  background: #fff;
+  margin: 40px auto;
 }
-.wrapper{
-  padding-top: 80px;
+.wrapper {
+  padding-top: 6rem;
   min-height: 100%;
   position: relative;
 }
-.content{
+.content {
   padding-bottom: 250px;
 }
 
@@ -382,7 +427,6 @@ table.inner-borders {
   padding-top: 50px;
   margin-top: -50px;
 }
-
 
 // Scrollbar
 ::-webkit-scrollbar {
@@ -401,13 +445,12 @@ table.inner-borders {
   background: #202020;
 }
 
-
 //********************************************************
 //       Custom classes to apply to block elements,
 //  more info: http://pavelmakhov.com/2015/12/images-in-jekyll
 //********************************************************
 .key {
-  font-size: 1.0em;
+  font-size: 1em;
   box-shadow: 1px 0 1px 0 #555, 0 1px 0 2px #888, 0 2px 0 2px #777;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -415,18 +458,17 @@ table.inner-borders {
   margin: 2px 3px;
   padding: 0px 5px;
 }
-.center-image
-{
+.center-image {
   margin: 0 auto;
   display: block;
 }
-.filename{
+.filename {
   background-color: #292929;
   color: lightgrey;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
   margin: 0;
-  font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
   border-left: 0;
   bottom: -2px;
   position: relative;
@@ -453,4 +495,3 @@ table.inner-borders {
     line-height: 1.8;
   }
 }
-
