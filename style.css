@@ -1,7 +1,8 @@
 body {
-  background-color: black;
+  position: relative;
+  background-color: rgb(40, 40, 40);
   font-family: monospace;
-  background: black,
+  background: rgb(40, 40, 40),
     linear-gradient(
       90deg,
       rgba(255, 0, 0, 0.06),
@@ -12,6 +13,10 @@ body {
 
 .cursor {
   animation: blinker 0.5s linear infinite;
+}
+
+.prompt {
+  color: rgb(255, 176, 0);
 }
 
 @keyframes blinker {

@@ -2,7 +2,7 @@
   // initial configuration
 
   terminalelem = document.querySelector("#input");
-  _prompt = "$~> "; // type of the prompt
+  _prompt = "<b class='prompt'>p0lish:~$ </b> "; // type of the prompt
   cursor = "<span class='cursor'>█</span>"; // cursor element
   unknowncommand = "Unknown command";
   linebreak = "<br />";
