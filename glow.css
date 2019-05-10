@@ -1,0 +1,12 @@
+body {
+  color: rgba(79, 244, 66, 1);
+  text-shadow: 0 0 0.5rem rgba(79, 244, 66, 1), 1px 0 1px rgba(255, 0, 0, 1),
+    -1px 0 1px rgba(0, 0, 255, 1);
+}
+a {
+  color: rgba(79, 244, 66, 1);
+}
+::selection {
+  background: #0080ff;
+  text-shadow: none;
+}
