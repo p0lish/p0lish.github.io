@@ -33,6 +33,14 @@ _about = () => {
 
      Currently learning dart, react.
      Always eager to learn new technologies.
+
+     Level: 5+ years of experience
+     
+     Personality: quiet, curious, calm, analytical
+     
+     Skills: front-end, back-end, devops, ux/ui
+     
+     interests: programming, old games, podcasts, travel, reading, learning, cats
     </pre>`;
   _print(out);
 };
