@@ -8,60 +8,68 @@ _clear = () => {
 _date = () => {
   _print(new Date().toISOString());
 };
-
-_help = () => {
-  const out = `
+const help_ = `
     <pre>
     "help                   This command",
-    "<a href='#about'>about</a>                  Brief summary about myself"
-    "<a href='#skills'>skills</a>                 Skillset, and what tools I use"
-    "<a href='#contact'>contact</a>                How to contact to me",
+    "about                  Brief summary about myself"
+    "skills                 Skillset, and what tools I use"
+    "contact                How to contact to me",
     "contact &lt;key&gt;          Open page (example: 'email' or 'linkedin')",
-    "<a href='#clear'>clear</a>                  Clears the screen",
+    "clear                  Clears the screen",
       </pre>`;
-
-  _print(out);
+const about_ = `
+      <pre>
+       Janos Lengyel, senior software engineer.
+       Mainly working on frontend using [Angular], [Vue], [React]
+       and javascript, css(3), html.
+  
+       Currently learning dart, react.
+       Always eager to learn new technologies.
+  
+       <b>LEVEL:</b> 5+ years of experience
+       
+       <b>PERSONALITY:</b> quiet, curious, calm, analytical
+       
+       <b>SKILLS:</b> front-end, back-end, devops, ux/ui
+       
+       <b>INTERESTS:</b> programming, old games, podcasts, travel, reading, learning, cats
+      </pre>`;
+const skills_ = `
+      <pre>
+      Web applications ███████████████████░    Angular ███████████████████░
+  
+      Creativity       ██████████████████░░    NPM     ██████████████████░░
+      
+      Javascript       ██████████████████░░    Node.js ██████████████░░░░░░ 
+      
+      CSS              ██████████████████░░    Linux   ███████████████████░
+      
+      Python           █████████████████░░░    Vue     ██████████░░░░░░░░░░ 
+      
+      UX/UI            ████████████████░░░░    React   ███████░░░░░░░░░░░░░
+      </pre>`;
+const contact_ = `
+      <pre>
+      "[email]:        <a href="mailto:janos.lengyel@protonmail.ch">janos.lengyel@protonmail.ch"</a>
+      
+      "[linkedin]:     <a href='https://www.linkedin.com/in/janoslengyel/' target=_blank>janoslengyel</a>",
+  
+      "[soundcloud]:   <a href="https://soundcloud.com/p0lish" target=_blank>p0lish</a>",
+      
+      "[github]:       <a href="https://github.com/p0lish" target=_blank >https://github.com/p0lish</a>",
+        </pre>`;
+_help = () => {
+  _print(help_);
 };
 
 _about = () => {
   _put(asciEngine.printText("about", 4));
-  const out = `
-    <pre>
-     Janos Lengyel, senior software engineer.
-     Mainly working on frontend using [Angular], [Vue], [React]
-     and javascript, css(3), html.
-
-     Currently learning dart, react.
-     Always eager to learn new technologies.
-
-     <b>LEVEL:</b> 5+ years of experience
-     
-     <b>PERSONALITY:</b> quiet, curious, calm, analytical
-     
-     <b>SKILLS:</b> front-end, back-end, devops, ux/ui
-     
-     <b>INTERESTS:</b> programming, old games, podcasts, travel, reading, learning, cats
-    </pre>`;
-  _print(out);
+  _print(about_);
 };
 
 _skills = () => {
   _put(asciEngine.printText("skills", 4));
-  const out = `
-    <pre>
-    Web applications ███████████████████░    Angular ███████████████████░
-
-    Creativity       ██████████████████░░    NPM     ██████████████████░░
-    
-    Javascript       ██████████████████░░    Node.js ██████████████░░░░░░ 
-    
-    CSS              ██████████████████░░    Linux   ███████████████████░
-    
-    Python           █████████████████░░░    Vue     ██████████░░░░░░░░░░ 
-    
-    UX/UI            ████████████████░░░░    React   ███████░░░░░░░░░░░░░
-    </pre>`;
-  _print(out);
+  _print(skills_);
 };
 
 _exit = () => {
@@ -79,25 +87,8 @@ _contact = param => {
     window.open(contacts[param]);
   } else {
     _put(asciEngine.printText("contacts", 4));
-    const out = `
-    <pre>
-    "[email]:        <a href="mailto:janos.lengyel@protonmail.ch">janos.lengyel@protonmail.ch"</a>
-    
-    "[linkedin]:     <a href='https://www.linkedin.com/in/janoslengyel/' target=_blank>janoslengyel</a>",
-
-    "[soundcloud]:   <a href="https://soundcloud.com/p0lish" target=_blank>p0lish</a>",
-    
-    "[github]:       <a href="https://github.com/p0lish" target=_blank >https://github.com/p0lish</a>",
-      </pre>`;
-
-    _print(out);
+    _print(contact_);
   }
-};
-
-_weather = () => {
-  fetch("https://wttr.in/Budapest?format=4", { mode: "no-cors" }).then(resp => {
-    _print(resp);
-  });
 };
 
 _terminalfunctions = {
@@ -108,6 +99,5 @@ _terminalfunctions = {
   exit: _exit,
   contact: _contact,
   about: _about,
-  skills: _skills,
-  weather: _weather
+  skills: _skills
 };
