@@ -4,6 +4,7 @@
   position: fixed;
   overflow: hidden;
   width: 100%;
+  z-index: -1;
 }
 
 .scanlines:before,

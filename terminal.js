@@ -48,7 +48,7 @@
   _initBanner = () => {
     _put(asciEngine.printText("terminal_-_x", 5));
     _print(`<pre>
-    type 'help' for more information
+    type '<a href="#help">help</a>' for more information
     </pre>`);
   };
 
@@ -133,14 +133,17 @@
 
   init = () => {
     _initBanner();
-    document.querySelector("#inputText").focus();
+    window.addEventListener("hashchange", event => {
+      const command = window.location.hash.substr(1);
+      _terminalfunctions[command]();
+    });
     window.addEventListener("keydown", event => {
       if (!readonly) {
-        code = event.code ? event.code : e.which;
+        code = event.code || event.which;
         if (Object.keys(_commands).includes(code)) {
           _commands[code](_ibuff.join(""));
         } else {
-          _ibuff.push(_preFormatChar(code));
+          _ibuff.push(_preFormatChar(event.key));
         }
         _render();
       }

@@ -13,11 +13,11 @@ _help = () => {
   const out = `
     <pre>
     "help                   This command",
-    "about                  Brief summary about myself"
-    "skills                 Skillset, and what tools I use"
-    "contact                How to contact to me",
+    "<a href='#about'>about</a>                  Brief summary about myself"
+    "<a href='#skills'>skills</a>                 Skillset, and what tools I use"
+    "<a href='#contact'>contact</a>                How to contact to me",
     "contact &lt;key&gt;          Open page (example: 'email' or 'linkedin')",
-    "clear                  Clears the screen",
+    "<a href='#clear'>clear</a>                  Clears the screen",
       </pre>`;
 
   _print(out);

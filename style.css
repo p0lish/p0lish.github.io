@@ -35,3 +35,7 @@ body {
 pre {
   margin-left: 0;
 }
+
+a {
+  text-decoration-line: unset;
+}
