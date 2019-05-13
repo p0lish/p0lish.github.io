@@ -17,10 +17,6 @@
   _render = () =>
     (terminalelem.innerHTML = _pastbuff + _ibuff.join("") + cursor);
 
-  _setFocus = () => {
-    document.querySelector("#inputText").focus();
-  };
-
   _newline = () => (_pastbuff += _ibuff.join("").concat(linebreak, _prompt));
   _newlines = () => (_pastbuff += _ibuff.join("").concat(linebreaks, _prompt));
   _print = buff => {
@@ -140,10 +136,11 @@
     document.querySelector("#inputText").focus();
     window.addEventListener("keydown", event => {
       if (!readonly) {
-        if (Object.keys(_commands).includes(event.code)) {
-          _commands[event.code](_ibuff.join(""));
+        code = event.code ? event.code : e.which;
+        if (Object.keys(_commands).includes(code)) {
+          _commands[code](_ibuff.join(""));
         } else {
-          _ibuff.push(_preFormatChar(event.key));
+          _ibuff.push(_preFormatChar(code));
         }
         _render();
       }
