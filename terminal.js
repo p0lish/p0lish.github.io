@@ -133,6 +133,7 @@
 
   init = () => {
     _initBanner();
+    document.querySelector("#inputText").focus();
     window.addEventListener("keydown", event => {
       if (!readonly) {
         if (Object.keys(_commands).includes(event.code)) {
