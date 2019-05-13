@@ -94,6 +94,12 @@ _contact = param => {
   }
 };
 
+_weather = () => {
+  fetch("https://wttr.in/Budapest?format=4", { mode: "no-cors" }).then(resp => {
+    _print(resp);
+  });
+};
+
 _terminalfunctions = {
   clear: _clear,
   cls: _clear,
@@ -102,5 +108,6 @@ _terminalfunctions = {
   exit: _exit,
   contact: _contact,
   about: _about,
-  skills: _skills
+  skills: _skills,
+  weather: _weather
 };
