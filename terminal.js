@@ -17,6 +17,10 @@
   _render = () =>
     (terminalelem.innerHTML = _pastbuff + _ibuff.join("") + cursor);
 
+  _setFocus = () => {
+    document.querySelector("#inputText").focus();
+  };
+
   _newline = () => (_pastbuff += _ibuff.join("").concat(linebreak, _prompt));
   _newlines = () => (_pastbuff += _ibuff.join("").concat(linebreaks, _prompt));
   _print = buff => {

@@ -37,5 +37,7 @@ pre {
 }
 
 .input-text {
-  display: none;
+  background: none;
+  border: none;
+  width: 0;
 }
