@@ -48,7 +48,7 @@
   _initBanner = () => {
     _put(asciEngine.printText("terminal_-_x", 5));
     _print(`<pre>
-    type '<a href="#help">help</a>' for more information
+    type 'help' for more information
     </pre>`);
   };
 
