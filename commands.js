@@ -36,17 +36,17 @@ const about_ = `
       </pre>`;
 const skills_ = `
       <pre>
-      Web applications ███████████████████░    Angular ███████████████████░
+      Web applications ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░    Angular ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░
   
-      Creativity       ██████████████████░░    NPM     ██████████████████░░
+      Creativity       ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░    NPM     ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░
       
-      Javascript       ██████████████████░░    Node.js ██████████████░░░░░░ 
+      Javascript       ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░    Node.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░ 
       
-      CSS              ██████████████████░░    Linux   ███████████████████░
+      CSS              ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░    Linux   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░
       
-      Python           █████████████████░░░    Vue     ██████████░░░░░░░░░░ 
+      Python           ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░    Vue     ▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░ 
       
-      UX/UI            ████████████████░░░░    React   ███████░░░░░░░░░░░░░
+      UX/UI            ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░    React   ▓▓▓▓▓▓▓░░░░░░░░░░░░░
       </pre>`;
 const contact_ = `
       <pre>
@@ -75,6 +75,8 @@ _skills = () => {
 _exit = () => {
   window.open("", "_self").close();
 };
+
+_weather = () => {};
 
 _contact = param => {
   const contacts = {
