@@ -1,7 +1,7 @@
 body {
   color: rgba(51, 255, 0, 1);
-  text-shadow: 0 0 0.5rem rgba(51, 255, 0, 1), 1px 0 1px rgba(255, 0, 0, 1),
-    -1px 0 1px rgba(0, 0, 255, 1);
+  text-shadow: 0 0 0.5rem rgba(51, 255, 0, 1), 2px 0 1px rgba(0, 0, 255, 1),
+    -1px 0 1px rgba(255, 0, 0, 1);
 }
 a {
   color: rgba(51, 255, 0, 1);
