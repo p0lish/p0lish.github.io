@@ -1,7 +1,8 @@
 (() => {
   // initial configuration
 
-  terminalelem = document.querySelector("#input");
+  displayelem = document.querySelector("#display");
+  clielem = document.querySelector("#input");
   _prompt = "<b class='prompt'>p0lish:~$ </b> "; // type of the prompt
   cursor = "<span class='cursor'>█</span>"; // cursor element
   unknowncommand = "Unknown command";
@@ -14,18 +15,24 @@
   readonly = false;
 
   // render buffer contents to the display
-  _render = () =>
-    (terminalelem.innerHTML = _pastbuff + _ibuff.join("") + cursor);
-
+  _render = () => (clielem.innerHTML = _pastbuff + _ibuff.join("") + cursor);
+  _freeze = () => {
+    displayelem.innerHTML += _pastbuff + linebreak;
+    _pastbuff = "";
+    _ibuff = [];
+  };
+  _nbspline = () => (_pastbuff += _ibuff.join("").concat(_prompt));
   _newline = () => (_pastbuff += _ibuff.join("").concat(linebreak, _prompt));
   _newlines = () => (_pastbuff += _ibuff.join("").concat(linebreaks, _prompt));
+
   _print = buff => {
     readonly = true;
     _pastbuff += _ibuff.join("").concat(linebreak);
     let i = 0;
     const timer = setInterval(() => {
       if (i > buff.length - 1) {
-        _newlines();
+        _freeze();
+        _nbspline();
         clearInterval(timer);
         readonly = false;
       } else {
@@ -41,7 +48,7 @@
     _pastbuff += linebreak;
     _pastbuff += buff;
     _ibuff = [];
-    _render();
+    _freeze();
     window.scrollTo(0, document.body.scrollHeight);
   };
 
@@ -64,8 +71,8 @@
       if (Object.keys(_terminalfunctions).includes(input)) {
         _terminalfunctions[input](param);
       } else if (_ibuff.length < 1) {
-        _newline();
-        _render();
+        _freeze();
+        _nbspline();
       } else {
         _pastbuff += _ibuff
           .join("")

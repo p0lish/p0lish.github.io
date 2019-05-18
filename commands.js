@@ -1,6 +1,7 @@
 // terminal command router
 // terminal command functions
 _clear = () => {
+  displayelem.innerHTML = "";
   _pastbuff = _prompt;
   _ibuff = [];
 };

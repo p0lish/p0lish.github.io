@@ -1,5 +1,8 @@
 body {
   position: relative;
+  padding-top: 1rem;
+  margin: 0;
+  letter-spacing: 0.1rem;
   background-color: rgb(40, 40, 40);
   font-family: monospace;
   background: rgb(40, 40, 40),
@@ -29,7 +32,7 @@ body {
 }
 
 .input {
-  margin: 1rem;
+  margin: 0 1rem 0 1rem;
 }
 
 pre {
