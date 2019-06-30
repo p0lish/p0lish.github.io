@@ -18,6 +18,7 @@ const help_ = `
     "contact                How to contact to me",
     "contact &lt;key&gt;          Open page (example: 'email' or 'linkedin')",
     "clear                  Clears the screen",
+    "nrw                    RetroWave animation with sound"
       </pre>`;
 const about_ = `
       <pre>
@@ -71,12 +72,12 @@ _help = () => {
 };
 
 _about = () => {
-  _put(asciEngine.printText("about", 4));
+  _put(asciiEngine.printText("about", 4));
   _print(about_);
 };
 
 _skills = () => {
-  _put(asciEngine.printText("skills", 4));
+  _put(asciiEngine.printText("skills", 4));
   _print(skills_);
 };
 
@@ -84,8 +85,9 @@ _exit = () => {
   window.open("", "_self").close();
 };
 
-_weather = () => {};
-
+_nrw = () => {
+  window.open('/nrw.html');
+}
 _contact = param => {
   const contacts = {
     email: "mailto:janos.lengyel@protonmail.ch",
@@ -96,7 +98,7 @@ _contact = param => {
   if (param && Object.keys(contacts).includes(param)) {
     window.open(contacts[param]);
   } else {
-    _put(asciEngine.printText("contacts", 4));
+    _put(asciiEngine.printText("contacts", 4));
     _print(contact_);
   }
 };
@@ -109,11 +111,12 @@ _terminalfunctions = {
   exit: _exit,
   contact: _contact,
   about: _about,
-  skills: _skills
+  skills: _skills,
+  nrw: _nrw,
 };
 
 
-const asciEngine = (() => {
+const asciiEngine = (() => {
   alphabet = {
     height: 6,
     0: ` ██████╗ 
@@ -433,7 +436,7 @@ const asciEngine = (() => {
   };
 
   _initBanner = () => {
-    _put(asciEngine.printText("terminal_-_x", 5));
+    _put(asciiEngine.printText("terminal_-_x", 5));
     _print(`<pre>
     type 'help' for more information
     </pre>`);

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>nrw</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            text-align: center;
+            background: #111;
+            background: linear-gradient(#0c141f 44%, #3472a1 1%, #0c141f 50%);
+        }
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .inner-wrapper {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            margin: 0 auto;
+            perspective: 180px;
+            perspective-origin: 50% 40%;
+        }
+
+        .landscape {
+            position: absolute;
+
+            width: 1000%;
+            left: -230%;
+            height: 130%;
+            bottom: -30%;
+            background-image: -webkit-linear-gradient(top, #ff00ff 2px, transparent 2px), -webkit-linear-gradient(left, #ff00ff 2px, transparent 2px);
+            background-size: 50px 50px, 200px 200px;
+            background-position: -1px -1px, -1px -1px;
+            transform: rotateX(85deg);
+            animation: moveUp .5s infinite linear;
+        }
+
+        @keyframes moveUp {
+            0% {
+                background-position: -50px -50px, -1px -1px;
+            }
+
+            100% {
+                background-position: -1px -1px, -1px -1px;
+            }
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            height: 43%;
+
+        }
+
+        .sun-container {
+            opacity: .85;
+            height: 1000px;
+            width: 1000px;
+        }
+
+        .sun {
+            border: 1px solid;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(358deg, #ff00ff 0%, #ff00ff 45%, #000080 100%);
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            box-shadow: -2px 9px 91px 11px rgba(0, 0, 0, 0.75);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sun-container">
+            <div class="sun">
+                <div class="bars">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+
+            </div>
+        </div>
+        <div class="inner-wrapper">
+            <div class="landscape"></div>
+        </div>
+    </div>
+    <iframe width="0" height="0" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/473109036&color=%235c145c&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+</body>
+
+</html>
