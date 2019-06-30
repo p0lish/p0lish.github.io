@@ -1,36 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Terminal - x</title>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no"
-    />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <link rel="stylesheet" type="text/css" href="scanlines.css" />
-    <link rel="stylesheet" type="text/css" href="glow.css" />
-  </head>
-  <body>
-    <div class="scanlines"></div>
-    <div class="input" id="display"></div>
-    <div class="input" id="input"></div>
-  </body>
-  <script src="ascii.js"></script>
-  <script src="commands.js"></script>
-  <script src="terminal.js"></script>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=UA-139851154-1"
-  ></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
 
-    gtag("config", "UA-139851154-1");
-  </script>
+<head>
+  <title>Terminal - x</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+        content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <link rel="stylesheet"
+        type="text/css"
+        href="style.css" />
+  <link rel="stylesheet"
+        type="text/css"
+        href="scanlines.css" />
+  <link rel="stylesheet"
+        type="text/css"
+        href="glow.css" />
+</head>
+
+<body>
+  <div class="scanlines" id="scanlines"></div>
+  <div class="input"
+       id="display"></div>
+  <div class="input"
+       id="input"></div>
+       <input type="text" id="terminalInput" />
+</body>
+<script src="ascii.js"></script>
+<script src="commands.js"></script>
+<script src="terminal.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async
+        src="https://www.googletagmanager.com/gtag/js?id=UA-139851154-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-139851154-1");
+</script>
+
 </html>
