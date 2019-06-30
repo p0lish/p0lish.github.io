@@ -1,24 +1,130 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Terminal - x</title>
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no"
+      content="width=device-width,minimum-scale=1,maximum-scale=5,user-scalable=yes"
     />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <link rel="stylesheet" type="text/css" href="scanlines.css" />
-    <link rel="stylesheet" type="text/css" href="glow.css" />
+    <meta http-equiv="cache-control" content="max-age=3600" />
+    <style>
+    body {
+  position: relative;
+  padding-top: 1rem;
+  margin: 0;
+  letter-spacing: 0.1rem;
+  background-color: rgb(40, 40, 40);
+  font-family: monospace;
+  background: rgb(40, 40, 40),
+    linear-gradient(
+      90deg,
+      rgba(255, 0, 0, 0.06),
+      rgba(0, 255, 0, 0.02),
+      rgba(0, 0, 255, 0.06)
+    );
+  color: rgba(51, 255, 0, 1);
+  text-shadow: 0 0 0.5rem rgba(51, 255, 0, 1), 2px 0 1px rgba(0, 0, 255, 1),
+    -1px 0 1px rgba(255, 0, 0, 1);
+}
+
+.cursor {
+  animation: blinker 0.5s linear infinite;
+}
+
+.prompt {
+  color: rgb(255, 176, 0);
+  text-shadow: none;
+  text-shadow: 0 0 0.5rem rgb(255, 176, 0), 1px 0 1px rgba(255, 0, 0, 1),
+    -1px 0 1px rgba(0, 0, 255, 1);
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+.input {
+  margin: 0 1rem 0 1rem;
+}
+
+pre {
+  margin-left: 0;
+}
+
+a {
+  text-decoration-line: unset;
+  color: rgba(51, 255, 0, 1);
+
+}
+
+::selection {
+  background: #0080ff;
+  text-shadow: none;
+}
+
+
+.scanlines {
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+}
+
+.scanlines:before,
+.scanlines:after {
+  display: block;
+  pointer-events: none;
+  content: "";
+  position: absolute;
+}
+
+.scanlines:before {
+  width: 100%;
+  height: 2px;
+  z-index: 2147483649;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0.75;
+  -webkit-animation: scanline 6s linear infinite;
+  animation: scanline 6s linear infinite;
+}
+.scanlines:after {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2147483648;
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(0, 0, 0, 0.2) 50%
+  );
+  background-size: 100% 3px;
+  animation: scanlines 1s steps(60) infinite;
+}
+
+@keyframes scanline {
+  0% {
+    transform: translate3d(0, 200000%, 0);
+  }
+}
+@keyframes scanlines {
+  0% {
+    background-position: 0 50%;
+  }
+}
+</style>
   </head>
   <body>
+    <main>
     <div class="scanlines"></div>
     <div class="input" id="display"></div>
     <div class="input" id="input"></div>
+  </main>
   </body>
-  <script src="ascii.js"></script>
-  <script src="commands.js"></script>
-  <script src="terminal.js"></script>
+  <script async src="terminal.min.js"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script
     async
