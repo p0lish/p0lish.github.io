@@ -16,7 +16,7 @@
         body {
             text-align: center;
             background: #000080;
-            background: linear-gradient(#000000 1%,#000080 44%, #3472a1 1%, #0c141f 50%);
+            background: linear-gradient(#000000 1%, #000080 44%, #3472a1 1%, #0c141f 50%);
         }
         }
 
@@ -69,19 +69,23 @@
         }
 
         .sun-container {
+            top: 1rem;
+            position: relative;
             opacity: .85;
-            height: 1000px;
-            width: 1000px;
+            height: 50rem;
+            width: 50rem;
+
         }
 
         .sun {
-            border: 1px solid;
+
             width: 100%;
             height: 100%;
             background: linear-gradient(358deg, #ff00ff 0%, #ff00ff 45%, #fefd7d 100%);
             border-radius: 50%;
             position: relative;
             overflow: hidden;
+            box-shadow: 0px 0px 150px 0px #ff00ff;
         }
 
         .bar {
@@ -89,6 +93,7 @@
             width: 100%;
             background-color: #000080;
             margin-bottom: 5%;
+            opacity: 0.6;
 
         }
 
@@ -100,21 +105,41 @@
             overflow: hidden;
             filter: blur(1px);
         }
+
+        .scanlines {
+            top: 0;
+            bottom: 0;
+            position: fixed;
+            overflow: hidden;
+            width: 100%;
+            background: linear-gradient(to bottom,
+                    transparent 50%,
+                    rgba(0, 0, 0, 0.2) 50%);
+            background-size: 100% 10px;
+        }
     </style>
 </head>
 
 <body>
+    <div class="scanlines"></div>
     <div class="container">
         <div class="sun-container">
             <div class="sun">
                 <div class="bars">
-                    <div class="bar" style="height:1px; background: #000010;"></div>
-                    <div class="bar" style="height:5px; background: #000022"></div>
-                    <div class="bar" style="height:10px; background: #000021"></div>
-                    <div class="bar" style="height:15px; background: #000035"></div>
-                    <div class="bar" style="height:25px; background: #00004b"></div>
-                    <div class="bar" style="height:30px; background: #000065"></div>
-                    <div class="bar" style="height:35px; background: #00007d"></div>
+                    <div class="bar"
+                         style="height:1px; background: #000010;"></div>
+                    <div class="bar"
+                         style="height:5px; background: #000022"></div>
+                    <div class="bar"
+                         style="height:10px; background: #000021"></div>
+                    <div class="bar"
+                         style="height:15px; background: #000035"></div>
+                    <div class="bar"
+                         style="height:25px; background: #00004b"></div>
+                    <div class="bar"
+                         style="height:30px; background: #000065"></div>
+                    <div class="bar"
+                         style="height:35px; background: #00007d"></div>
                 </div>
 
             </div>
@@ -123,7 +148,12 @@
             <div class="landscape"></div>
         </div>
     </div>
-    <iframe width="0" height="0" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/473109036&color=%235c145c&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+    <iframe width="0"
+            height="0"
+            scrolling="no"
+            frameborder="no"
+            allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/473109036&color=%235c145c&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
 </body>
 
 </html>
