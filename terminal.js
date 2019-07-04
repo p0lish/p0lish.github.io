@@ -18,7 +18,7 @@ const help_ = `
     "contact                How to contact to me",
     "contact &lt;key&gt;          Open page (example: 'email' or 'linkedin')",
     "clear                  Clears the screen",
-    "play                    RetroWave animation with sound"
+    "play                   RetroWave animation with sound"
       </pre>`;
 const about_ = `
       <pre>
@@ -86,8 +86,8 @@ _exit = () => {
 };
 
 _play = () => {
-  window.open('/nrw.html');
-}
+  window.open("/nrw.html");
+};
 _contact = param => {
   const contacts = {
     email: "mailto:janos.lengyel@protonmail.ch",
@@ -112,9 +112,8 @@ _terminalfunctions = {
   contact: _contact,
   about: _about,
   skills: _skills,
-  play: _play,
+  play: _play
 };
-
 
 const asciiEngine = (() => {
   alphabet = {
@@ -379,8 +378,6 @@ const asciiEngine = (() => {
   };
 })();
 
-
-
 (() => {
   // initial configuration
 
@@ -522,7 +519,6 @@ const asciiEngine = (() => {
   //  terminal initialzer
 
   init = () => {
-
     _initBanner();
     window.addEventListener("keydown", event => {
       if (!readonly) {
