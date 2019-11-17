@@ -23,9 +23,22 @@
           <span></span>
           <span></span>
         </div>
+        <div class="cat">
+          <div class="cat-body">
+            <div class="cat-ears"></div>
+          </div>
+          <div class="cat-belly"></div>
+        </div>
       </div>
+      <div class="cat_tail"></div>
       <div class="moon_shadow">
         <div class="shadow_detail"></div>
+        <div class="cat cat__shadow">
+          <div class="cat-body">
+            <div class="cat-ears"></div>
+          </div>
+          <div class="cat-belly"></div>
+        </div>
       </div>
     </div>
   </body>
@@ -56,6 +69,40 @@
   animation-timing-function: ease-in-out;
 }
 
+@keyframes tailMove {
+  0%  {transform: rotate(0deg);}
+  20% {transform: rotate(-10deg);}
+  40% {transform: rotate(0deg);}
+  60% {transform: rotate(10deg);}
+  80% {transform: rotate(0eg);}
+}
+
+.cat_tail {
+  animation-name: tailMove;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+
+@keyframes moveEar {
+  0%{ top: -10px;}
+  50% {top: -5px;}
+  100% {top: -10px;}
+}
+
+.cat-ears::after{
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-name: moveEar;
+}
+.cat-ears:before {
+  animation: moveEar;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
 
 
 
