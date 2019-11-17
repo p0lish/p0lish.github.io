@@ -19,6 +19,7 @@ const help_ = `
     "contact &lt;key&gt;          Open page (example: 'email' or 'linkedin')",
     "clear                  Clears the screen",
     "play                   RetroWave animation with sound"
+    "night                  Css only animation"
       </pre>`;
 const about_ = `
       <pre>
@@ -88,6 +89,9 @@ _exit = () => {
 _play = () => {
   window.open("/nrw.html");
 };
+_night = () => {
+  window.open("/night");
+}
 _contact = param => {
   const contacts = {
     email: "mailto:janos.lengyel@protonmail.ch",
@@ -112,7 +116,8 @@ _terminalfunctions = {
   contact: _contact,
   about: _about,
   skills: _skills,
-  play: _play
+  play: _play,
+  night: _night
 };
 
 const asciiEngine = (() => {
