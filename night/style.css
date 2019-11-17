@@ -14,42 +14,6 @@
     box-sizing: border-box;
 }
 
-h1,
-p {
-    font-family: "Sanchez", serif;
-    color: white;
-    text-align: center;
-    font-weight: 400;
-    opacity: 0.7;
-}
-
-h1 {
-    font-size: 30px;
-    margin-bottom: 30px;
-}
-
-p {
-    font-size: 16px;
-    line-height: 16px;
-    margin-top: 100px;
-}
-
-p a:link,
-p a:active,
-p a:visited {
-    color: inherit;
-    text-decoration: none;
-    border-bottom: 1px dotted;
-    border-bottom-color: inherit;
-    opacity: 0.6;
-    transition: all 0.1s linear;
-}
-
-p a:link:hover {
-    opacity: 1;
-}
-
-
 body {
     background-color: rgb(17, 31, 68);
     display: flex;
@@ -57,7 +21,6 @@ body {
     align-items: center;
     height: 100vh;
     overflow: hidden;
-
 }
 
 .window {
@@ -71,23 +34,23 @@ body {
 }
 
 .moon_shadow {
-  width: 250px;
-  margin: 80px 0px 0 150px;
-  height: 200px;
-  background-color:#E9AE4B;
-  position: relative;
-  border-bottom: none;
-  overflow: hidden;
-  opacity: .7;
-  transform: skew(48deg)
+    width: 250px;
+    margin: 20px 0px 0 140px;
+    height: 160px;
+    background-color: #E9AE4B;
+    position: relative;
+    border-bottom: none;
+    overflow: hidden;
+    opacity: .7;
+    transform: skew(48deg)
 }
 
 .shadow_detail {
-  height: 1px;
-  width: 100%;
-  border: 6px solid rgb(17, 31, 68);
-  top: 93px;
-  position: relative;
+    height: 1px;
+    width: 100%;
+    border: 6px solid rgb(17, 31, 68);
+    top: 93px;
+    position: relative;
 }
 
 .window:before {
@@ -113,7 +76,7 @@ body {
     width: 100%;
     top: 190px;
     background-color: #2D2623;
-    
+    z-index: 2;
 }
 
 .window-details:before,
@@ -153,7 +116,6 @@ body {
     right: 6px;
     border-left: 22px solid transparent;
 }
-
 
 .mountains-left:before,
 .mountains-left:after,
@@ -413,21 +375,18 @@ body {
     bottom: 0;
     border-radius: 50%;
     transform-origin: left bottom;
-
 }
 
 .cat_tail {
-  background-color: #2D2623;
-  width: 12px;
-  height: 100px;
-  top: -40px;
-  border-radius: 12px;
-  margin: auto;
-  right: 36px;
-  position: relative;
+    background-color: #2D2623;
+    width: 12px;
+    height: 100px;
+    top: -40px;
+    border-radius: 12px;
+    margin: auto;
+    right: 36px;
+    position: relative;
 }
-
-
 
 .cat-ears:before {
     width: 0;
@@ -447,8 +406,30 @@ body {
 }
 
 .cat__shadow {
-  top: -25px;
-  position: relative;
-  transform: scale(1,-.6);
-  background: rgb(17, 31, 68);
+    top: -25px;
+    position: relative;
+    transform: scale(1, -.6);
+    background: rgb(17, 31, 68);
+}
+
+.snowfall {
+  background: url("./snow1.png"), url("./snow2.png"), url("./snow3.png"); 
+  animation: letItSnow 30s linear infinite;
+  background-size: 101px;
+  width: 100%;
+  height: 25rem;
+  position: absolute;
+  z-index: 1;
+}
+
+@keyframes letItSnow {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 100 3000px, 400px 400px, 300px;
+  }
+  100% {
+    background-position: 500px 1000px, 400px 400px, 300px;
+  }
 }
