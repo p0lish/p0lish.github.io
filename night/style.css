@@ -380,8 +380,8 @@ body {
 .cat_tail {
     background-color: #2D2623;
     width: 12px;
-    height: 100px;
-    top: -40px;
+    height: 130px;
+    top: -75px;
     border-radius: 12px;
     margin: auto;
     right: 36px;
@@ -395,6 +395,18 @@ body {
     border-right: 35px solid transparent;
     top: -10px;
 }
+
+.shadow.cat-ears:before {
+  border-bottom: 30px solid rgb(17, 31, 68);
+  border-right: 35px solid transparent;
+}
+
+.shadow.cat-ears:after {
+  border-bottom: 30px solid rgb(17, 31, 68);
+    border-left: 35px solid transparent;
+}
+
+
 
 .cat-ears:after {
     width: 0;
@@ -432,8 +444,4 @@ body {
   100% {
     background-position: 500px 1000px, 400px 400px, 300px;
   }
-}
-
-.shadowcolor {
-    background-color: rgb(17, 31, 68);
 }
