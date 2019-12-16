@@ -396,15 +396,15 @@ body {
     top: -10px;
 }
 
-.shadow.cat-ears:before {
+/* div.shadow.cat-ears:before {
   border-bottom: 30px solid rgb(17, 31, 68);
   border-right: 35px solid transparent;
 }
 
-.shadow.cat-ears:after {
+div.shadow.cat-ears:after {
   border-bottom: 30px solid rgb(17, 31, 68);
     border-left: 35px solid transparent;
-}
+} */
 
 
 
