@@ -5,7 +5,7 @@
 body {
   font-size: 5px;
   background: rgb(34,193,195);
-  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(3,88,168,0.3799719716988358) 100%);
+  background: linear-gradient(0deg, rgb(7, 0, 95) 0%, rgba(0, 50, 97, 0.38) 100%);
   background-repeat: no-repeat;
   height: 100vh;
 }
