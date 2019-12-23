@@ -22,7 +22,8 @@ body {
   border-bottom: 25rem solid lightblue;
   border-right: 2em solid transparent;
   border-left: 2em solid transparent;
-  border-radius: 10rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 
 .rotor {
