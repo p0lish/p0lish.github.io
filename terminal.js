@@ -28,7 +28,6 @@ const about_ = `
        Mainly working on frontend using [Angular], [Vue], [React]
        and javascript, css(3), html.
 
-       Currently learning dart, react.
        Always eager to learn new technologies.
 
        <b>LEVEL:</b> 5+ years of experience
@@ -161,6 +160,8 @@ _terminalfunctions = {
 
   _initBanner = () => {
     _print(`<pre>
+    Basic retro look terminal emulator written in js, and also a brief resume about me.
+
     type 'help' for more information
     </pre>`);
   };
