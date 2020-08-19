@@ -101,7 +101,8 @@ _terminalfunctions = {
   about: _about,
   skills: _skills,
   play: _play,
-  night: _night
+  night: _night,
+  turbine: _turbine,
 };
 
 (() => {
