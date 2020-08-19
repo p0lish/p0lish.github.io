@@ -20,52 +20,42 @@ const help_ = `
     "clear                  Clears the screen",
     "play                   RetroWave animation with sound"
     "night                  Css only animation"
+    "turbine                Yet another css only animation"
       </pre>`;
 const about_ = `
       <pre>
        Janos Lengyel, senior software engineer.
        Mainly working on frontend using [Angular], [Vue], [React]
        and javascript, css(3), html.
-  
+
        Currently learning dart, react.
        Always eager to learn new technologies.
-  
+
        <b>LEVEL:</b> 5+ years of experience
-       
+
        <b>PERSONALITY:</b> quiet, curious, calm, analytical
-       
+
        <b>SKILLS:</b> front-end, back-end, devops, ux/ui
-       
+
        <b>INTERESTS:</b> programming, old games, podcasts, travel, reading, learning, cats
       </pre>`;
 const skills_ = `
       <pre>
-      Web applications       Angular 
-      ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░
-
-      Creativity             NPM     
-      ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░
-      
-      Javascript             Node.js 
-      ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░ 
-      
-      CSS                    Linux   
-      ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░
-      
-      Python                 Vue     
-      ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░   ▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░ 
-      
-      UX/UI                  React   
-      ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░   ▓▓▓▓▓▓▓░░░░░░░░░░░░░
+      Web applications       Angular
+      Creativity             NPM
+      Javascript             Node.js
+      CSS                    Linux
+      Python                 Vue
+      UX/UI                  React
       </pre>`;
 const contact_ = `
       <pre>
       "[email]:        <a href="mailto:janos.lengyel@protonmail.ch">janos.lengyel@protonmail.ch"</a>
-      
+
       "[linkedin]:     <a href='https://www.linkedin.com/in/janoslengyel/' target=_blank>janoslengyel</a>",
-  
+
       "[soundcloud]:   <a href="https://soundcloud.com/p0lish" target=_blank>p0lish</a>",
-      
+
       "[github]:       <a href="https://github.com/p0lish" target=_blank >https://github.com/p0lish</a>",
         </pre>`;
 _help = () => {
@@ -73,17 +63,11 @@ _help = () => {
 };
 
 _about = () => {
-  _put(asciiEngine.printText("about", 4));
   _print(about_);
 };
 
 _skills = () => {
-  _put(asciiEngine.printText("skills", 4));
   _print(skills_);
-};
-
-_exit = () => {
-  window.open("", "_self").close();
 };
 
 _play = () => {
@@ -91,6 +75,9 @@ _play = () => {
 };
 _night = () => {
   window.open("/night");
+}
+_turbine = () => {
+  window.open("/wind-turbine");
 }
 _contact = param => {
   const contacts = {
@@ -102,7 +89,6 @@ _contact = param => {
   if (param && Object.keys(contacts).includes(param)) {
     window.open(contacts[param]);
   } else {
-    _put(asciiEngine.printText("contacts", 4));
     _print(contact_);
   }
 };
@@ -112,276 +98,12 @@ _terminalfunctions = {
   cls: _clear,
   date: _date,
   help: _help,
-  exit: _exit,
   contact: _contact,
   about: _about,
   skills: _skills,
   play: _play,
   night: _night
 };
-
-const asciiEngine = (() => {
-  alphabet = {
-    height: 6,
-    0: ` ██████╗ 
-██╔═████╗
-██║██╔██║
-████╔╝██║
-╚██████╔╝
- ╚═════╝`,
-    1: ` ██╗
-███║
-╚██║
- ██║
- ██║
-  ╚═╝`,
-    2: `██████╗ 
-╚════██╗
- █████╔╝
-██╔═══╝ 
-███████╗
-╚══════╝`,
-    3: `██████╗ 
-╚════██╗
- █████╔╝
- ╚═══██╗
-██████╔╝
-╚═════╝ `,
-    4: `██╗  ██╗
-██║  ██║
-███████║
-╚════██║
-     ██║
-     ╚═╝`,
-    5: `███████╗
-██╔════╝
-███████╗
-╚════██║
-███████║
-╚══════╝`,
-    6: ` ██████╗ 
-██╔════╝ 
-███████╗ 
-██╔═══██╗
-╚██████╔╝
- ╚═════╝`,
-    7: `███████╗
-╚════██║
-    ██╔╝
-   ██╔╝ 
-   ██║  
-    ╚═╝`,
-    8: ` █████╗ 
-██╔══██╗
-╚█████╔╝
-██╔══██╗
-╚█████╔╝
-   ╚════╝`,
-    9: ` █████╗ 
-██╔══██╗
-╚██████║
- ╚═══██║
- █████╔╝
-  ╚════╝`,
-    a: ` █████╗ 
-██╔══██╗
-███████║
-██╔══██║
-██║  ██║
-╚═╝  ╚═╝`,
-    b: `██████╗ 
-██╔══██╗
-██████╔╝
-██╔══██╗
-██████╔╝
-╚═════╝ `,
-    c: ` ██████╗
-██╔════╝
-██║     
-██║     
-╚██████╗
- ╚═════╝`,
-    d: `██████╗ 
-██╔══██╗
-██║  ██║
-██║  ██║
-██████╔╝
-╚═════╝`,
-    e: `███████╗
-██╔════╝
-█████╗  
-██╔══╝  
-███████╗
-╚══════╝`,
-    f: `███████╗
-██╔════╝
-█████╗  
-██╔══╝  
-██║     
- ╚═╝    `,
-    g: ` ██████╗ 
-██╔════╝ 
-██║  ███╗
-██║   ██║
-╚██████╔╝
- ╚═════╝ `,
-    h: `██╗  ██╗
-██║  ██║
-███████║
-██╔══██║
-██║  ██║
- ╚═╝  ╚═╝`,
-    i: `██╗
-██║
-██║
-██║
-██║
-╚═╝`,
-    j: `     ██╗
-     ██║
-     ██║
-██   ██║
-╚█████╔╝
- ╚════╝ `,
-    k: `██╗  ██╗
-██║ ██╔╝
-█████╔╝ 
-██╔═██╗ 
-██║  ██╗
-╚═╝  ╚═╝`,
-    l: `██╗     
-██║     
-██║     
-██║     
-███████╗
-╚══════╝
-            `,
-    m: `███╗   ███╗
-████╗ ████║
-██╔████╔██║
-██║╚██╔╝██║
-██║ ╚═╝ ██║
-╚═╝     ╚═╝`,
-    n: `███╗   ██╗
-████╗  ██║
-██╔██╗ ██║
-██║╚██╗██║
-██║ ╚████║
-╚═╝  ╚═══╝`,
-    o: ` ██████╗ 
-██╔═══██╗
-██║   ██║
-██║   ██║
-╚██████╔╝
- ╚═════╝ `,
-    p: `██████╗ 
-██╔══██╗
-██████╔╝
-██╔═══╝ 
-██║     
-╚═╝     `,
-    q: ` ██████╗ 
-██╔═══██╗
-██║   ██║
-██║▄▄ ██║
-╚██████╔╝
- ╚══▀▀═╝ `,
-    r: `██████╗ 
-██╔══██╗
-██████╔╝
-██╔══██╗
-██║  ██║
-╚═╝  ╚═╝`,
-    s: `███████╗
-██╔════╝
-███████╗
-╚════██║
-███████║
-╚══════╝
-            `,
-    t: `████████╗
-╚══██╔══╝
-   ██║   
-   ██║   
-   ██║   
-   ╚═╝   `,
-    u: `██╗   ██╗
-██║   ██║
-██║   ██║
-██║   ██║
-╚██████╔╝
- ╚═════╝ `,
-    v: `██╗   ██╗
-██║   ██║
-██║   ██║
-╚██╗ ██╔╝
- ╚████╔╝ 
-  ╚═══╝  `,
-    w: `██╗    ██╗
-██║    ██║
-██║ █╗ ██║
-██║███╗██║
-╚███╔███╔╝
- ╚══╝╚══╝ `,
-    x: ` ██╗  ██╗
- ╚██╗██╔╝
-  ╚███╔╝ 
-  ██╔██╗ 
- ██╔╝ ██╗
- ╚═╝  ╚═╝`,
-    y: `██╗   ██╗
-╚██╗ ██╔╝
- ╚████╔╝ 
-  ╚██╔╝  
-   ██║   
-   ╚═╝   `,
-    z: `███████╗
-╚══███╔╝
-  ███╔╝ 
- ███╔╝  
-███████╗
-╚══════╝`,
-    _: `    
-    
-    
-    
-    
-    `,
-    "-": `          
-          
-    █████╗
-    ╚════╝
-          
-          `
-  };
-
-  buildingText = text => {
-    let res = ``;
-    for (let i = 0; i < alphabet.height; i++) {
-      line = "";
-      for (let j = 0; j < text.length; j++) {
-        const linepiece = alphabet[text[j]];
-        let piece = "";
-        if (linepiece) {
-          piece = linepiece.split("\n")[i];
-        }
-
-        line += piece || "";
-      }
-      res += line + `\n`;
-    }
-    return res;
-  };
-
-  printText = (text, size) => {
-    let result = buildingText(text);
-    return `<pre style='font-size: ${size}px' >${result}</pre>`;
-  };
-
-  return {
-    printText: printText
-  };
-})();
 
 (() => {
   // initial configuration
@@ -438,7 +160,6 @@ const asciiEngine = (() => {
   };
 
   _initBanner = () => {
-    _put(asciiEngine.printText("terminal_-_x", 5));
     _print(`<pre>
     type 'help' for more information
     </pre>`);
@@ -508,7 +229,8 @@ const asciiEngine = (() => {
     MetaLeft: () => false,
     MetaRight: () => false,
     Pause: () => false,
-    ScrollLock: () => false
+    ScrollLock: () => false,
+    Meta: () => false,
   };
 
   _preFormatChar = char => {
