@@ -21,6 +21,7 @@ const help_ = `
     "play                   RetroWave animation with sound"
     "night                  Css only animation"
     "turbine                Yet another css only animation"
+    "spaceinv               Space Invaders written in js"
       </pre>`;
 const about_ = `
       <pre>
@@ -78,6 +79,11 @@ _night = () => {
 _turbine = () => {
   window.open("/wind-turbine");
 }
+
+_spaceinvaders = () => {
+  window.open("/spaceinvaders");
+}
+
 _contact = param => {
   const contacts = {
     email: "mailto:janos.lengyel@protonmail.ch",
@@ -103,6 +109,9 @@ _terminalfunctions = {
   play: _play,
   night: _night,
   turbine: _turbine,
+  spaceinv: _spaceinvaders,
+  invaders: _spaceinvaders,
+  space: _spaceinvaders,
 };
 
 (() => {
