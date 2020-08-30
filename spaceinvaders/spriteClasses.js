@@ -1,6 +1,6 @@
 class Sprite {
-    constructor(ctx, position, shape, color, size, speed) {
-      this.ctx = ctx;
+    constructor(game, position, shape, color, size, speed) {
+      this.ctx = game.ctx;
       this.position = position;
       this.shape = shape;
       this.color = color;
@@ -69,8 +69,9 @@ class Sprite {
 
 
   class Invader extends Sprite {
-    constructor(ctx, position, shape, color, size, speed){
-      super(ctx, position, shape, color, size, speed)
+    constructor(game, position, shape, color, size, speed){
+      super(game, position, shape, color, size, speed)
+      this.game = game
     }
 
     getHitBox() {
@@ -117,14 +118,15 @@ class Sprite {
     explode(anim) {
       this.shape = anim;
       this.active = 0;
+      this.game.score += 100
       setTimeout(() => {this.shape = [" "]}, 200)
     }
   }
   
 
   class LaserBeam extends Sprite {
-    constructor(ctx, position, shape, color, size, speed){
-      super(ctx, position, shape, color, size, speed)
+    constructor(game, position, shape, color, size, speed){
+      super(game, position, shape, color, size, speed)
     }
 
     getHitBox() {
@@ -153,28 +155,28 @@ class Sprite {
   }
   
   class Tank extends Sprite {
-    constructor(ctx, position, shape, color, size, speed){
-      super(ctx, position, shape, color, size, speed)
+    constructor(game, position, shape, color, size, speed){
+      super(game, position, shape, color, size, speed)
       window.addEventListener('keydown', this.move.bind(this))
       this.reloadTime = 1000;
       this.ammoOn = true;
+      this.game = game;
     }
 
 
 
     shoot(){
       this.ammoOn = false;
-      const beam = new LaserBeam(this.ctx, {x:this.position.x+this.size/5, y: this.position.y}, Shapes.laser, 'green', this.size, 1);
+      const beam = new LaserBeam(this.game, {x:this.position.x+this.size/5, y: this.position.y}, Shapes.laser, 'green', this.size, 1);
       setTimeout(()=> this.ammoOn = true, this.reloadTime )
       return beam;
     }
 
     move(event){
-      debugging && console.log('event.keyCode', event.keyCode)
-      if (event.keyCode === 37) { this.position.x -= 10;}
-      if (event.keyCode === 39) { this.position.x += 10;}
+      if (event.keyCode === 37) { (this.position.x > this.size) && (this.position.x -= 10);}
+      if (event.keyCode === 39) { (this.position.x < this.game.width - this.size) && (this.position.x += 10);}
       if (event.keyCode === 32) {
-        if (this.ammoOn) {gameState.laserBeams.push(this.shoot())}
+        if (this.ammoOn) {this.game.laserBeams.push(this.shoot())}
       }
     }
   }

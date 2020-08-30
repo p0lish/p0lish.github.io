@@ -6,7 +6,12 @@
       @font-face {
         font-family: 'invaders';
         src: url('./finally.ttf');
-    }
+      }
+      
+      @font-face {
+        font-family: 'arcade';
+        src: url('./ARCADECLASSIC.TTF');
+      }
 
 
       body, html {
@@ -36,7 +41,6 @@
 
     #gameCanvas {
       z-index: 1;
-      border: 1px dotted grey;
     }
 
   </style>
@@ -45,6 +49,7 @@
     <div id="container"></div>
     <canvas id="gameCanvas"></canvas>
   </body>
+  <script src="stars.js"></script>
   <script src="spriteClasses.js"></script>
   <script src="spaceinvaders.js"></script>
 </html>
