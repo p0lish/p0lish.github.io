@@ -1,4 +1,4 @@
-// Const variables 
+// Const variables
 const debugging = false;
 
 const colors = {
@@ -11,12 +11,9 @@ const gameState = {
   scene: 'start',
   fps: 50,
   level: 0,
-  invaderspeed: 30,
-  invadersTop: 50,
+  invaderspeed: 50,
   gameSpeed: 5,
-  spriteSize: 40,
-  beamPresent: false,
-  beamPos: { x: 0, y: 0 },
+  spriteSize: 30,
   table: [],
   width: 0,
   height: 0,
@@ -29,7 +26,7 @@ const gameState = {
 const initialGameState = Object.assign(gameState);
 
 const Invaders = {
-  squid: ['d','e'],
+  squid: ['d', 'e'],
   crab: ['b', 'c'],
   octopus: ['f', 'g'],
 }
@@ -37,7 +34,7 @@ const Invaders = {
 const Shapes = {
   tank: ['w'],
   tankRuin: ['x'],
-  explosion : ['z'],
+  explosion: ['z'],
   ufo: ['h'],
   laser: ['y']
 }
@@ -49,19 +46,19 @@ class InvaderSquad {
     this.ctx = game.ctx;
     this.rows = rows;
     this.colNum = colNum;
-    this.squadOffset = {x:0, y:0};
+    this.squadOffset = { x: 0, y: 0 };
     let gapper = 0;
-    
-    rows.map(rowType=> {
+
+    rows.map(rowType => {
       let newRow = [];
       gapper += 1;
       for (let i = 0; i < colNum; i++) {
         newRow.push(new Invader(
-          game, 
-          {x: ((gameState.width/2)-colNum*gameState.spriteSize/1.5)+(i*gameState.spriteSize*1.5), y: 100+(gapper*gameState.spriteSize*1.5)}, 
-          Invaders[rowType], 
-          'green', 
-          gameState.spriteSize, 
+          game,
+          { x: ((gameState.width / 2) - colNum * gameState.spriteSize / 1.5) + (i * gameState.spriteSize * 1.5), y: 100 + (gapper * gameState.spriteSize * 1.5) },
+          Invaders[rowType],
+          'green',
+          gameState.spriteSize,
           gameState.invaderspeed
         ))
       }
@@ -83,10 +80,10 @@ class InvaderSquad {
   }
 }
 
-// Functions 
+// Functions
 
 const welcomeDraw = (game, ctx) => {
- 
+
   const charmap = 'qwertyuiopasdfghjklzxcvbnm'
   ctx.clearRect(0, 0, game.width, game.height);
   ctx.textBaseline = "center";
@@ -99,31 +96,31 @@ const welcomeDraw = (game, ctx) => {
   const size = 30;
   debugging && charmap.split('').map((char, index) => {
     ctx.font = `${size}px invaders`;
-    ctx.fillText(char, 60, size+size*index)
+    ctx.fillText(char, 60, size + size * index)
     ctx.font = `${size}px arcade`;
-    ctx.fillText(char, 120, size+size*index)
+    ctx.fillText(char, 120, size + size * index)
 
     ctx.font = `${size}px invaders`;
-    ctx.fillText(char.toUpperCase(), 180, size+size*index)
+    ctx.fillText(char.toUpperCase(), 180, size + size * index)
     ctx.font = `${size}px arcade`;
-    ctx.fillText(char.toUpperCase(), 240, size+size*index)
+    ctx.fillText(char.toUpperCase(), 240, size + size * index)
   })
 };
 
 
 const drawScore = (game, ctx) => {
-  ctx.font = "50px arcade";
+  ctx.font = `${gameState.spriteSize}px arcade`;
   ctx.fillStyle = '#ffffff';
   ctx.fillText(`score: `, 100, 50);
   ctx.fillStyle = '#00ff00';
-  ctx.fillText(`${game.score}`, 100 + 'score'.split('').length *40, 50)
+  ctx.fillText(`${game.score}`, 'score'.split('').length * 40, 50)
 }
 
 const drawGame = (game, ctx) => {
   ctx.clearRect(0, 0, game.width, game.height); // clear canvas
 
   drawScore(game, ctx);
-  
+
   gameState.starField.draw();
   gameState.starField.update();
 
@@ -137,26 +134,26 @@ const drawGame = (game, ctx) => {
           const invaderPos = invader.getHitBox();
           const beamPos = laserBeam.getHitBox();
           if (
-              beamPos.x < invaderPos.x + invaderPos.w &&
-              beamPos.x + beamPos.w > invaderPos.x &&
-              beamPos.y < invaderPos.y + invaderPos.h &&
-              beamPos.y + beamPos.h > invaderPos.y
-            ) {
+            beamPos.x < invaderPos.x + invaderPos.w &&
+            beamPos.x + beamPos.w > invaderPos.x &&
+            beamPos.y < invaderPos.y + invaderPos.h &&
+            beamPos.y + beamPos.h > invaderPos.y
+          ) {
             invader.explode(Shapes.explosion)
             gameState.laserBeams.shift();
             game.invadersNum -= 1;
             if (game.invadersNum <= 0) {
               alert('you won!')
-              setTimeout(()=> {
+              setTimeout(() => {
                 window.location.reload();
-              },100)
+              }, 100)
             }
+          }
         }
-        }
-        
+
       })
     })
-   
+
     laserBeam.draw();
     laserBeam.move();
     if (laserBeam.getPosition().y < 0) {
@@ -176,9 +173,9 @@ const gotoGame = function (game, ctx) {
   gameState.table = new InvaderSquad(game, ['crab', 'crab', 'crab', 'crab', 'crab', 'crab'].reverse(), 10);
   gameState.invadersNum = gameState.table.getSquad().flat().length;
   console.log('gameState', gameState)
-  gameState.tank = new Tank(game, {x:gameState.width/2,y:gameState.height-gameState.spriteSize}, Shapes.tank, 'green', gameState.spriteSize+10, 1);
-  gameState.starField = new StarField(game, '#ffffff', {w: window.innerWidth, h: window.innerHeight}, 100)
-  
+  gameState.tank = new Tank(game, { x: gameState.width / 2, y: gameState.height - gameState.spriteSize }, Shapes.tank, 'green', gameState.spriteSize + 10, 1);
+  gameState.starField = new StarField(game, '#ffffff', { w: window.innerWidth, h: window.innerHeight }, 100)
+
   render()
 
 };
@@ -196,7 +193,7 @@ const gotoGame = function (game, ctx) {
   const keymap = {
     '32': {
       'start': startGame,
-    }    
+    }
   }
 
   const sceneMap = {
@@ -212,8 +209,8 @@ const gotoGame = function (game, ctx) {
 
   const draw = (stateFn = null) => {
     const gameCanvas = document.querySelector("#gameCanvas");
-    gameState.width = window.innerWidth - 200
-    gameState.height = window.innerHeight - 200
+    gameState.width = window.innerWidth - window.innerWidth * 0.2 || 800
+    gameState.height = window.innerHeight
     gameCanvas.width = gameState.width
     gameCanvas.height = gameState.height
     if (stateFn) {
