@@ -22,6 +22,8 @@ const help_ = `
     "night                  Css only animation"
     "turbine                Yet another css only animation"
     "spaceinv               Space Invaders written in js"
+    "google84               Google landing page if its invented in the 80s"
+
       </pre>`;
 const about_ = `
       <pre>
@@ -84,6 +86,10 @@ _spaceinvaders = () => {
   window.open("/spaceinvaders");
 }
 
+_google84 = () => {
+  window.open("/google84");
+}
+
 _contact = param => {
   const contacts = {
     email: "mailto:janos.lengyel@protonmail.ch",
@@ -112,6 +118,7 @@ _terminalfunctions = {
   spaceinv: _spaceinvaders,
   invaders: _spaceinvaders,
   space: _spaceinvaders,
+  google84: _google84,
 };
 
 (() => {

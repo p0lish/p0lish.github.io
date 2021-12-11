@@ -1,0 +1,216 @@
+@font-face {
+  font-family: "Microgramma";
+  src: url(../static/Microgramma\ D\ Extended\ Bold.otf);
+}
+
+body {
+  font-size: 14px;
+  position: relative;
+  margin: 0;
+  background-color: rgb(0, 0, 0);
+  font-family: monospace;
+  background: rgb(0, 0, 0),
+    linear-gradient(
+      90deg,
+      rgba(255, 0, 0, 0.06),
+      rgba(0, 255, 0, 0.02),
+      rgba(0, 0, 255, 0.06)
+    );
+  color: rgba(51, 255, 0, 1);
+  text-shadow: 0 0 0.5rem rgba(51, 255, 0, 1), 2px 0 1px rgba(0, 0, 255, 1),
+    -1px 0 1px rgba(255, 0, 0, 1);
+}
+
+.input {
+  margin: 0 1rem 0 1rem;
+}
+
+
+
+.scanlines {
+ 
+  width: 100%;
+}
+
+.scanlines:before,
+.scanlines:after {
+  display: block;
+  pointer-events: none;
+  content: "";
+  position: absolute;
+}
+
+.scanlines:before {
+  width: 100%;
+  height: 2px;
+  z-index: 2147483649;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0.75;
+  -webkit-animation: scanline 6s linear infinite;
+  animation: scanline 6s linear infinite;
+}
+.scanlines:after {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2147483648;
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(0, 0, 0, 0.2) 50%
+  );
+  background-size: 100% 3px;
+  animation: scanlines 1s steps(60) infinite;
+}
+
+.content {
+  min-height: 90vh;
+  margin: 1rem;
+}
+
+.logo {
+  font-size: 15vw;
+
+  font-family: "Microgramma";
+  padding: 0;
+  margin: 0;
+}
+
+.sublogo {
+  font-size: 8rem;
+  font-family: "Microgramma";
+  padding: 0;
+  margin: 0;
+  text-align: right;
+  margin-right: 12rem;
+  margin-top: -5rem;
+}
+
+.logo > sub {
+  font-size: 7rem;
+  position: relative;
+}
+
+.logo > hr {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  color: black;
+  border: black;
+  height: 0.4rem;
+  background: black;
+}
+
+.logo > hr:nth-of-type(1) {
+  top: 13rem;
+}
+
+.logo > hr:nth-of-type(2) {
+  top: 16rem;
+}
+
+.logo > hr:nth-of-type(3) {
+  top: 18rem;
+}
+
+.ta-center {
+  text-align: center;
+}
+
+.g1 {
+  color: rgb(0, 100, 255);
+  text-shadow: 0 0 1rem rgba(0, 100, 255, 1), 2px 0 1px rgba(0, 0, 255, 1),
+    -1px 0 1px rgba(255, 0, 0, 1);
+}
+
+.o1 {
+  color: rgb(255, 100, 0);
+  text-shadow: 0 0 1rem rgba(255, 100, 0, 1), 2px 0 1px rgba(0, 0, 255, 1),
+    -1px 0 1px rgba(255, 0, 0, 1);
+}
+
+.o2 {
+  color: rgb(255, 255, 0);
+  text-shadow: 0 0 1rem rgba(255, 255, 0, 1), 2px 0 1px rgba(0, 0, 255, 1),
+    -1px 0 1px rgba(255, 0, 0, 1);
+}
+
+.signo {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+}
+
+input,
+button {
+  background: none;
+  border: 1px solid rgba(51, 255, 0, 1);
+  font-size: 2rem;
+  color: rgba(51, 255, 0, 1);
+  padding: 0.5rem;
+  outline: none;
+
+}
+
+
+a {
+  color: rgba(51, 255, 0, 1);
+  text-decoration: none;
+}
+
+input {
+  width: 50%;
+  min-width: 20rem;
+}
+
+button:active {
+  background: rgba(51, 255, 0, 1);
+  color: rgba(0, 0, 0, 1);
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.mt-4 {
+  margin-top: 4rem;
+}
+
+.foot {
+  bottom: 0;
+  position: rellative;
+  font-size: 2rem;
+  margin-top: 5rem;
+}
+
+@keyframes scanlines {
+  0% {
+    background-position: 0 50%;
+  }
+}
+
+.flicker-slow{
+  animation: flicker 3s linear infinite;
+}
+
+@keyframes flicker {
+  0%,
+  19.999%,
+  22%,
+  62.999%,
+  64%,
+  64.999%,
+  70%,
+  100% {
+    opacity: 0.99;
+  }
+  20%,
+  21.999%,
+  63%,
+  63.999%,
+  65%,
+  69.999% {
+    opacity: 0.2;
+  }
+}

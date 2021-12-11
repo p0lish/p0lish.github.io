@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Terminal - x</title>
+        <link rel="stylesheet" href="google84.css">
+        <script>
+            const searchOn =  (query) => {
+                window.location.href = 'https://google.com/search?q=' + query;
+            }
+
+            document.addEventListener('DOMContentLoaded', function () {
+               const searchinput = document.querySelector('#search');
+               const searchbutton = document.querySelector('#searchbutton');
+               searchinput.focus();
+               searchinput.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    const search = searchinput.value;
+                    searchOn(search);
+                }
+               });
+
+               searchbutton.addEventListener('click', function () {
+                const search = searchinput.value;
+                searchOn(search);
+               });
+            });
+
+            fetch('https://uselessfacts.jsph.pl/random.json?language=en')
+                .then(response => response.json()).then(data => {
+                    document.querySelector('#fact').innerHTML = `> ${data.text}`;
+                })
+                .catch(error => console.error(error));
+            fetch('https://geek-jokes.sameerkumar.website/api?format=json')
+                .then(response => response.json()).then(data => {
+                    document.querySelector('#joke').innerHTML = `> ${data.joke}`;
+                })
+                .catch(error => console.error(error));
+        </script>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width,minimum-scale=1,maximum-scale=5,user-scalable=yes"
+            />
+        <meta http-equiv="cache-control" content="max-age=3600" />
+    </head>
+    <body>
+        <main>
+            <div class="scanlines"></div>
+            <div class="content">
+                <div id="fact">...</div>
+                <br />
+                <div id="joke">...</div>
+                <div class="ta-center mt-4">
+                    <h1 class="logo">
+                        <span class="g1">G</span><span class="o1">o</span><span
+                            class="o2">o</span><span class="g1">g</span><span>l</span><span
+                            class="o1">e</span>
+                    </h1>
+                    <div class="ta-center mt-4">
+                        <input type="text" name="search" id="search" />
+                    </div>
+                    <div class="ta-center mt-2">
+                        <button id="searchbutton">Search</button>
+                    </div>
+                    <div class="foot ta-center">
+                        <span class="flicker-slow">'Don't</span> Be evil'
+                    </div>
+                    <div class="signo">
+                        <a target="_blank" href="https://www.instagram.com/warakami_vaporwave/">Inspired by [WK]</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
