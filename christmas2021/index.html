@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Document</title>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+
+                const board = document.querySelector('#asciiboard');
+                const colors = ['#f00', '#ff0', '#0ff', '#0f0'];
+
+                const putOrnament = (starstring) => {
+                    const stArray = starstring.split("");
+                    const color = colors[Math.floor(Math.random()*colors.length)];
+
+                    return stArray.map((star,index) => index%4 === 1 && index > 0 ?`<span class="o" style="color:${color}">${star}</span>` : star).join("");
+                };
+
+                const getTree = (treeheight) => {
+                    const offsetLeft = treeheight-((treeheight-1)%10)-((treeheight-10)/2);
+                    console.log('offsetLeft :>> ', offsetLeft);
+                    let divi = 0;
+                    let tree = "";
+                    for (let i = 0; i < treeheight; i++) {
+                        const modi = i % 10;
+                        if (i % 10 === 0){
+                            divi =  i;
+                        }
+                        const numofstars = (modi)*2+divi+1;
+                        if (i == 0) {topclass = 'topstar';} else {topclass = '';}
+                        const stars_ = '*'.repeat(numofstars)
+                        const stars = putOrnament(stars_);
+                        tree += `<div class="treeline ${topclass}">${stars}</div>`;
+                    }
+                    return tree;
+                }
+                const treetxt = getTree(30);
+                board.innerHTML = treetxt;
+            });
+        </script>
+    </head>
+    <body>
+        <main>
+
+<div class="snowflakes" aria-hidden="true">
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+    <div class="snowflake">*</div>
+
+  </div>
+            <div class="scanlines"></div>
+            <div class="treewrapper">
+                <div` id="asciiboard" class="asciiboard"></div>
+            </div>
+            <h1>Merry Christmas</h1>
+        </main>
+    </body>
+</html>
