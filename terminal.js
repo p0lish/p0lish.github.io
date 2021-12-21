@@ -23,6 +23,7 @@ const help_ = `
     "turbine                Yet another css only animation"
     "spaceinv               Space Invaders written in js"
     "google84               Google landing page if its invented in the 80s"
+    "letitsnow              Merry Christmas"
 
       </pre>`;
 const about_ = `
@@ -90,6 +91,10 @@ _google84 = () => {
   window.open("/google84");
 }
 
+_letitsnow = () => {
+  window.open("/christmas2021");
+}
+
 _contact = param => {
   const contacts = {
     email: "mailto:janos.lengyel@protonmail.ch",
@@ -119,6 +124,7 @@ _terminalfunctions = {
   invaders: _spaceinvaders,
   space: _spaceinvaders,
   google84: _google84,
+  letitsnow: _letitsnow
 };
 
 (() => {

@@ -79,8 +79,11 @@ body {
 }
 
 @keyframes blinker {
-  50% {
-    color: rgba(51, 255, 0, 1)
+  from {
+    text-shadow: 0 0 0px #fff;
+  }
+  to {
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;
   }
 }
 
@@ -106,10 +109,11 @@ pre {
   font-size: 3rem;
   height: 2.5rem;
   color: yellow;
+  animation: blinker 4s ease-in-out infinite alternate;
 }
 
 .o {
-    animation: blinker 2s linear infinite;
+    animation: blinker 4s ease-in-out infinite alternate;
 }
 
 .snowflake {

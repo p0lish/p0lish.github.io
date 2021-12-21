@@ -9,14 +9,24 @@
         <script>
             document.addEventListener('DOMContentLoaded', () => {
 
+                const snow = document.querySelector('#snowflakes');
+                const snowFlakeType = '*';
+
+                for (let i = 0; i < 50; i++) {
+                    const flake = document.createElement('span');
+                    flake.classList.add('snowflake');
+                    flake.textContent= snowFlakeType;
+                    snow.appendChild(flake);
+                }
+
                 const board = document.querySelector('#asciiboard');
-                const colors = ['#f00', '#ff0', '#0ff', '#0f0'];
+                const colors = ['#f00', '#ff0'];
 
-                const putOrnament = (starstring) => {
+                const putOrnament = (i, starstring) => {
                     const stArray = starstring.split("");
-                    const color = colors[Math.floor(Math.random()*colors.length)];
+                    const color = colors[i%2];
 
-                    return stArray.map((star,index) => index%4 === 1 && index > 0 ?`<span class="o" style="color:${color}">${star}</span>` : star).join("");
+                    return stArray.map((star,index) => index%9 === 1 && index > 0 ?`<span class="o" style="color:${color}">${star}</span>` : star).join("");
                 };
 
                 const getTree = (treeheight) => {
@@ -32,7 +42,7 @@
                         const numofstars = (modi)*2+divi+1;
                         if (i == 0) {topclass = 'topstar';} else {topclass = '';}
                         const stars_ = '*'.repeat(numofstars)
-                        const stars = putOrnament(stars_);
+                        const stars = putOrnament(i, stars_);
                         tree += `<div class="treeline ${topclass}">${stars}</div>`;
                     }
                     return tree;
@@ -44,58 +54,7 @@
     </head>
     <body>
         <main>
-
-<div class="snowflakes" aria-hidden="true">
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-    <div class="snowflake">*</div>
-
-  </div>
+            <div id="snowflakes" class="snowflakes" aria-hidden="true"></div>
             <div class="scanlines"></div>
             <div class="treewrapper">
                 <div` id="asciiboard" class="asciiboard"></div>
