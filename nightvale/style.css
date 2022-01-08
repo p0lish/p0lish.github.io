@@ -1,0 +1,148 @@
+html {
+  background-color: black;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  color: white;
+}
+
+body {
+  background: ##9a2c8a;
+  overflow: hidden;
+}
+
+.fof {
+  margin: 10px 0;
+  height: 100vh;
+}
+
+.fof canvas,
+.fof img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 20px;
+  z-index: 1;
+
+  background-image: linear-gradient(
+    rgba(152, 41, 136, 255) 70%,
+    rgba(192, 70, 16, 255)
+  );
+}
+
+.ground {
+  background-color: black;
+  width: 100%;
+  height: 4rem;
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+}
+
+.town-foreground {
+  position: fixed;
+  bottom: 4rem;
+  min-height: 5rem;
+  z-index: 2;
+  max-width: 100%;
+  display: flex;
+  align-items: baseline;
+}
+
+.town-foreground > div {
+  background-color: black;
+}
+
+.town-background {
+  position: fixed;
+  bottom: 4rem;
+  min-height: 6rem;
+  z-index: 1;
+  display: flex;
+  max-width: 100%;
+  align-items: baseline;
+}
+
+.town-background > div {
+  background-color: rgb(68, 68, 68);
+}
+
+.building {
+  min-height: 4rem;
+  height: 4rem;
+  margin: 0;
+  width: 100%;
+  max-width: 3rem;
+  bottom: 0;
+}
+
+.street {
+  width: 1rem;
+  background-color: unset;
+}
+
+.town-background .building-big {
+  height: 10rem;
+}
+
+.town-background .building-medium {
+  height: 8rem;
+}
+
+.building-medium {
+  min-height: 4rem;
+}
+
+.building-big {
+  min-height: 6rem;
+}
+
+.window {
+  background-color: yellow;
+  width: 0.5rem;
+  height: 1rem;
+  margin: 0.3rem;
+  float: left;
+}
+
+.flicker {
+  animation: flicker 2s linear infinite;
+}
+
+.off {
+  background-color: rgb(41, 40, 40);
+}
+
+@keyframes flicker {
+  0%,
+  19.999%,
+  22%,
+  62.999%,
+  64%,
+  64.999%,
+  70%,
+  100% {
+    opacity: 0.99;
+  }
+  20%,
+  21.999%,
+  63%,
+  63.999%,
+  65%,
+  69.999% {
+    opacity: 0.2;
+  }
+}
+
+h1 {
+  float: right;
+  margin: auto;
+  width: 100%;
+  text-align: right;
+  font-size: 4rem;
+  margin: 1rem 2rem;
+}
+
+.title {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+}
