@@ -1,8 +1,0 @@
-{
-    "eslint.enable": false,
-    "tslint.enable": false,
-    "conventionalCommits.scopes": [
-        "spaceinvaders",
-        "terminal"
-    ]
-}

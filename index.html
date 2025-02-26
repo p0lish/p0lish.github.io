@@ -1,142 +1,561 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Terminal - x</title>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width,minimum-scale=1,maximum-scale=5,user-scalable=yes"
-    />
-    <meta http-equiv="cache-control" content="max-age=3600" />
-    <style>
-    body {
-  position: relative;
-  padding-top: 1rem;
-  margin: 0;
-  letter-spacing: 0.1rem;
-  background-color: rgb(40, 40, 40);
-  font-family: monospace;
-  background: rgb(40, 40, 40),
-    linear-gradient(
-      90deg,
-      rgba(255, 0, 0, 0.06),
-      rgba(0, 255, 0, 0.02),
-      rgba(0, 0, 255, 0.06)
-    );
-  color: rgba(51, 255, 0, 1);
-  text-shadow: 0 0 0.5rem rgba(51, 255, 0, 1), 2px 0 1px rgba(0, 0, 255, 1),
-    -1px 0 1px rgba(255, 0, 0, 1);
-}
+<html lang="en-us">
 
-.cursor {
-  animation: blinker 0.5s linear infinite;
-}
-
-.prompt {
-  color: rgb(255, 176, 0);
-  text-shadow: none;
-  text-shadow: 0 0 0.5rem rgb(255, 176, 0), 1px 0 1px rgba(255, 0, 0, 1),
-    -1px 0 1px rgba(0, 0, 255, 1);
-}
-
-@keyframes blinker {
-  50% {
-    opacity: 0;
-  }
-}
-
-.input {
-  margin: 0 1rem 0 1rem;
-}
-
-pre {
-  margin-left: 0;
-}
-
-a {
-  text-decoration-line: unset;
-  color: rgba(51, 255, 0, 1);
-
-}
-
-::selection {
-  background: #0080ff;
-  text-shadow: none;
-}
+    <head>
+	<meta name="generator" content="Hugo 0.143.1">
+        
 
 
-.scanlines {
-  top: 0;
-  bottom: 0;
-  position: fixed;
-  overflow: hidden;
-  width: 100%;
-}
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="Janos&#39;s website">
+<title>
+Janos&#39;s Website
+</title>
 
-.scanlines:before,
-.scanlines:after {
-  display: block;
-  pointer-events: none;
-  content: "";
-  position: absolute;
-}
+<link href="/index.xml" rel="alternate" type="application/rss+xml" title="Janos&#39;s website" />
 
-.scanlines:before {
-  width: 100%;
-  height: 2px;
-  z-index: 2147483649;
-  background: rgba(0, 0, 0, 0.3);
-  opacity: 0.75;
-  -webkit-animation: scanline 6s linear infinite;
-  animation: scanline 6s linear infinite;
-}
-.scanlines:after {
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 2147483648;
-  background: linear-gradient(
-    to bottom,
-    transparent 50%,
-    rgba(0, 0, 0, 0.2) 50%
-  );
-  background-size: 100% 3px;
-  animation: scanlines 1s steps(60) infinite;
-}
+        
+        <meta property="og:title" content="Janos&rsquo;s website" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="Janos&#39;s website"/>
+<meta property="og:url" content="https://p0lish.guthub.io/"/>
+<meta property="og:site_name" content="Janos&rsquo;s website"/>
 
-@keyframes scanline {
-  0% {
-    transform: translate3d(0, 200000%, 0);
-  }
-}
-@keyframes scanlines {
-  0% {
-    background-position: 0 50%;
-  }
-}
-</style>
-  </head>
-  <body>
-    <main>
-    <div class="scanlines"></div>
-    <div class="input" id="display"></div>
-    <div class="input" id="input"></div>
-  </main>
-  </body>
-  <script async src="terminal.js"></script>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=UA-139851154-1"
-  ></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
 
-    gtag("config", "UA-139851154-1");
-  </script>
+
+
+
+
+
+        
+<link rel="shortcut icon" href="/img/fav.ico">
+
+
+        
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.min.0cce7168fff66b3e76fd25ba02c02e0648227fdbaa508b3cdde8f789a452254e.css" integrity="sha256-DM5xaP/2az52/SW6AsAuBkgif9uqUIs83ej3iaRSJU4=" crossorigin="anonymous" media="screen">
+
+
+
+
+
+        
+
+
+<link rel="stylesheet" href="https://p0lish.guthub.io/styles/owlCarousel.min.b1f26e29c43c61fe8b5a6f225b4ee7c5f969a7b33cfe512706271e07246d93d1.css" integrity="sha256-sfJuKcQ8Yf6LWm8iW07nxflpp7M8/lEnBiceByRtk9E=" crossorigin="anonymous" media="screen">
+
+    </head>
+
+    <body>
+        
+        <section id="top" class="hero is-large">
+            
+            <div class="hero-head"></div>
+
+            
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    
+                    <h1 class="bold-title fade-in one">
+                        Hi, I&rsquo;m Janos
+                    </h1>
+                    <div class="subtitle is-3 fade-in two">
+                        <p>Software Engineer</p>
+
+                    </div>
+                    
+                    
+                    <div class="fade-in three">
+                        <div class="social-icons">
+    
+      
+      
+        <a href="https://bsky.app/profile/baldr.bsky.social" >
+          <i class="fab fab fa-butterfly"></i>
+        </a>
+      
+      
+      
+  
+      
+      
+        <a href="https://linkedin.com/in/janoslengyel" >
+          <i class="fab fab fa-linkedin-in"></i>
+        </a>
+      
+      
+      
+  
+</div>
+
+                    </div>
+                    
+                </div>
+            </div> 
+            
+
+            <div class="hero-foot fade-in three">
+                
+                
+
+<div class="container">
+    <hr>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        
+        <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+        <div class="navbar-menu has-content-centered" id="navMenu">
+            
+            
+            
+            
+
+            
+            
+
+            
+
+            
+                
+            
+
+            
+            
+            
+            
+            
+                
+                
+                <a class="navbar-item" href="/#projects">Projects</a>
+                
+            
+            
+            
+            
+
+            
+            
+            <a class="navbar-item" href="#contact">Contact</a>
+            
+            
+
+            
+            
+            
+
+            
+            
+        </div>
+    </nav>
+    <hr>
+</div>
+
+
+
+            </div>
+        </section> 
+
+        
+        
+        
+
+        
+
+        
+            
+        
+
+        
+        
+        
+        
+        
+        
+            
+            
+<div class="section" id="projects">
+    
+    <div class="container">
+        <h2 class="title is-2 has-text-centered">
+            Projects
+        </h2>
+        <div class="section">
+            <div class="columns is-multiline">
+                
+                
+                
+                
+                
+                
+                  
+                  
+                
+                <div class="column is-half">
+                    <div class="card" data-target="#project-0">
+                        
+                        <div class="card-image">
+                            <figure class="image is-3by2">
+                                <a >
+                                    
+                                    
+                                    
+                                    <img class="card-thumbnail" src="https://p0lish.guthub.io/projects/multivision/multivision_hu_e28e66cd11e669a1.png" alt ="multivision.png">
+                                    
+                                    
+                                </a>
+                            </figure>
+                        </div>
+                        
+                        <div class="card-content has-text-centered top-pad">
+                            <h1><a >
+                                Multivision
+                            </a></h1>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                
+                  
+                  
+                
+                <div class="column is-half">
+                    <div class="card" data-target="#project-1">
+                        
+                        <div class="card-image">
+                            <figure class="image is-3by2">
+                                <a >
+                                    
+                                    
+                                    
+                                    <img class="card-thumbnail" src="https://p0lish.guthub.io/projects/paramountplants/paramounts_hu_d822349b289b44ac.png" alt ="paramounts.png">
+                                    
+                                    
+                                </a>
+                            </figure>
+                        </div>
+                        
+                        <div class="card-content has-text-centered top-pad">
+                            <h1><a >
+                                Paramount Plants
+                            </a></h1>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                
+                  
+                  
+                
+                <div class="column is-half">
+                    <div class="card" data-target="#project-2">
+                        
+                        <div class="card-image">
+                            <figure class="image is-3by2">
+                                <a >
+                                    
+                                    
+                                    
+                                    <img class="card-thumbnail" src="https://p0lish.guthub.io/projects/home-project/terminal_hu_7ea67f4b5ef7fb40.png" alt ="terminal.png">
+                                    
+                                    
+                                </a>
+                            </figure>
+                        </div>
+                        
+                        <div class="card-content has-text-centered top-pad">
+                            <h1><a >
+                                My hobby project
+                            </a></h1>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                
+                  
+                  
+                
+                <div class="column is-half">
+                    <div class="card" data-target="#project-3">
+                        
+                        <div class="card-image">
+                            <figure class="image is-3by2">
+                                <a >
+                                    
+                                    
+                                    
+                                    <img class="card-thumbnail" src="https://p0lish.guthub.io/projects/ibm-video/ibmvideo_hu_570a5cd85a530208.png" alt ="ibmvideo.png">
+                                    
+                                    
+                                </a>
+                            </figure>
+                        </div>
+                        
+                        <div class="card-content has-text-centered top-pad">
+                            <h1><a >
+                                IBM Video
+                            </a></h1>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+    
+    
+    
+    
+    <div class="modal" id="project-0">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            
+            <header class="modal-card-header bottom-pad">
+                <h1 class="modal-card-title has-text-centered">Multivision</h1>
+            </header>
+            
+                     
+            <section class="modal-card-body markdown">
+                
+                
+                
+                    
+                        
+                        
+                            <img src="https://p0lish.guthub.io/projects/multivision/multivision_hu_1e52970363a21071.png" class="img-responsive" alt="multivision.png">
+                        
+                    
+                
+                
+                <p>I created a landing page for our team at Multivision.ai, focusing on clear navigation and engaging design to effectively showcase our projects and services.</p>
+<p><a href="https://multivision.ai/">Visit Multivision page</a></p>
+
+            </section>
+        </div>
+        <button class="modal-close is-large" aria-label="close" data-target="#project-0"></button>
+    </div>
+    
+    
+    
+    <div class="modal" id="project-1">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            
+            <header class="modal-card-header bottom-pad">
+                <h1 class="modal-card-title has-text-centered">Paramount Plants</h1>
+            </header>
+            
+                     
+            <section class="modal-card-body markdown">
+                
+                
+                
+                    
+                        
+                        
+                            <img src="https://p0lish.guthub.io/projects/paramountplants/paramounts_hu_891c8373c1ff62a4.png" class="img-responsive" alt="paramounts.png">
+                        
+                    
+                
+                
+                <p>I contributed to ParamountPlants.co.uk, focusing primarily on improving the website&rsquo;s security rather than site development. My role involved identifying vulnerabilities, implementing security measures, and ensuring a safe browsing experience for users.</p>
+<p><a href="https://paramountplants.co.uk/">Visit ParamountPlants page</a></p>
+
+            </section>
+        </div>
+        <button class="modal-close is-large" aria-label="close" data-target="#project-1"></button>
+    </div>
+    
+    
+    
+    <div class="modal" id="project-2">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            
+            <header class="modal-card-header bottom-pad">
+                <h1 class="modal-card-title has-text-centered">My hobby project</h1>
+            </header>
+            
+                     
+            <section class="modal-card-body markdown">
+                
+                
+                
+                    
+                        
+                        
+                            <img src="https://p0lish.guthub.io/projects/home-project/terminal_hu_a65a2835bd9c12a.png" class="img-responsive" alt="terminal.png">
+                        
+                    
+                
+                
+                <p>These are my hobby projects. I like to play around with different technologies and see what I can build.</p>
+<p><a href="/terminal">Visit my hobby project page</a></p>
+
+            </section>
+        </div>
+        <button class="modal-close is-large" aria-label="close" data-target="#project-2"></button>
+    </div>
+    
+    
+    
+    <div class="modal" id="project-3">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            
+            <header class="modal-card-header bottom-pad">
+                <h1 class="modal-card-title has-text-centered">IBM Video</h1>
+            </header>
+            
+                     
+            <section class="modal-card-body markdown">
+                
+                
+                
+                    
+                        
+                        
+                            <img src="https://p0lish.guthub.io/projects/ibm-video/ibmvideo_hu_86ca4d918717cfb.png" class="img-responsive" alt="ibmvideo.png">
+                        
+                    
+                
+                
+                <p>At IBM, I worked on the IBM Video Streaming platform, focusing on building and improving its UI components. My main tasks included creating new, reusable components and designing responsive, user-friendly layouts to improve the customer experience.</p>
+<p><a href="https://video.ibm.com/">Visit IBM Video page</a></p>
+
+            </section>
+        </div>
+        <button class="modal-close is-large" aria-label="close" data-target="#project-3"></button>
+    </div>
+    
+    
+    <div class="container has-text-centered top-pad">
+    <a href="#top">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+</div>
+
+</div>
+
+<div class="container"><hr></div>
+
+
+        
+        
+        
+        
+        
+        
+        <div class="section" id="contact">
+            <div class="container has-text-centered">
+                <h2 class="title is-2">Contact</h2>
+                <div class="markdown">
+                    
+                </div>
+                
+                <p>My current local time is <span id="time"></span>.</p>
+                
+                
+                <h3 class="subtitle is-3 has-text-centered top-pad">
+                    <a href="mailto:janos.lengyel@pm.me">janos.lengyel@pm.me</a>
+                </h3>
+                
+                <div class="social-icons">
+    
+      
+      
+        <a href="https://bsky.app/profile/baldr.bsky.social" >
+          <i class="fab fab fa-butterfly"></i>
+        </a>
+      
+      
+      
+  
+      
+      
+        <a href="https://linkedin.com/in/janoslengyel" >
+          <i class="fab fab fa-linkedin-in"></i>
+        </a>
+      
+      
+      
+  
+</div>
+
+            </div>
+            
+            <div class="container has-text-centered top-pad">
+    <a href="#top">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+</div>
+
+        </div>
+        <div class="container">
+            <hr>
+        </div>
+        
+        
+        
+
+        <div class="section" id="footer">
+    <div class="container has-text-centered">
+    
+        2025  | Janos Lengyel
+    
+    </div>
+</div>
+
+
+        
+        
+
+
+<script src="https://p0lish.guthub.io/js/bundle.5c23c0437f001a469ca373a465a6f7487203d18e10cdff76d86a60af66d5ee28.js" integrity="sha256-XCPAQ38AGkaco3OkZab3SHID0Y4Qzf922Gpgr2bV7ig="></script>
+
+
+
+    <script src="https://p0lish.guthub.io/close.min.js" integrity=""></script>
+
+        
+
+
+<script src="https://p0lish.guthub.io/js/bundleOwlCarousel.bc6b73f0a36bf19c70c5df8fc352d322988ca2bc40743fb836ee7371d555c28a.js" integrity="sha256-vGtz8KNr8Zxwxd&#43;Pw1LTIpiMorxAdD&#43;4Nu5zcdVVwoo="></script>
+
+
+        
+        <script>
+            function update_localtime() {
+                const time = new Date().toLocaleTimeString('en-US', { timeZone: 'Europe\/Helsinki', timeStyle: 'short' });
+                document.getElementById('time').innerHTML = time;
+            }
+            update_localtime();
+            
+            setInterval(update_localtime, 1000);
+        </script>
+        
+    </body>
+
 </html>
