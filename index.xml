@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Janos&#39;s website</title>
-    <link>https://p0lish.guthub.io/</link>
+    <link>https://p0lish.github.io/</link>
     <description>Recent content on Janos&#39;s website</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://p0lish.guthub.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://p0lish.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Multivision</title>
-      <link>https://p0lish.guthub.io/projects/multivision/</link>
+      <link>https://p0lish.github.io/projects/multivision/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://p0lish.guthub.io/projects/multivision/</guid>
+      <guid>https://p0lish.github.io/projects/multivision/</guid>
       <description>&lt;p&gt;I created a landing page for our team at Multivision.ai, focusing on clear navigation and engaging design to effectively showcase our projects and services.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://multivision.ai/&#34;&gt;Visit Multivision page&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Paramount Plants</title>
-      <link>https://p0lish.guthub.io/projects/paramountplants/</link>
+      <link>https://p0lish.github.io/projects/paramountplants/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://p0lish.guthub.io/projects/paramountplants/</guid>
+      <guid>https://p0lish.github.io/projects/paramountplants/</guid>
       <description>&lt;p&gt;I contributed to ParamountPlants.co.uk, focusing primarily on improving the website&amp;rsquo;s security rather than site development. My role involved identifying vulnerabilities, implementing security measures, and ensuring a safe browsing experience for users.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://paramountplants.co.uk/&#34;&gt;Visit ParamountPlants page&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>My hobby project</title>
-      <link>https://p0lish.guthub.io/projects/home-project/</link>
+      <link>https://p0lish.github.io/projects/home-project/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://p0lish.guthub.io/projects/home-project/</guid>
-      <description>&lt;p&gt;These are my hobby projects. I like to play around with different technologies and see what I can build.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://p0lish.guthub.io/terminal&#34;&gt;Visit my hobby project page&lt;/a&gt;&lt;/p&gt;</description>
+      <guid>https://p0lish.github.io/projects/home-project/</guid>
+      <description>&lt;p&gt;These are my hobby projects. I like to play around with different technologies and see what I can build.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://p0lish.github.io/terminal&#34;&gt;Visit my hobby project page&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>IBM Video</title>
-      <link>https://p0lish.guthub.io/projects/ibm-video/</link>
+      <link>https://p0lish.github.io/projects/ibm-video/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://p0lish.guthub.io/projects/ibm-video/</guid>
+      <guid>https://p0lish.github.io/projects/ibm-video/</guid>
       <description>&lt;p&gt;At IBM, I worked on the IBM Video Streaming platform, focusing on building and improving its UI components. My main tasks included creating new, reusable components and designing responsive, user-friendly layouts to improve the customer experience.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://video.ibm.com/&#34;&gt;Visit IBM Video page&lt;/a&gt;&lt;/p&gt;</description>
     </item>
   </channel>
